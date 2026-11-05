@@ -1,0 +1,14 @@
+# 密钥与本地配置，绝不提交
+server/env.local.js
+.env
+.env.*
+
+# 临时测试产物
+_*
+node_modules/
+# Local TRTC credentials
+环境变量-请填写.env
+
+server/.runtime/
+
+server/.runtime-tests/
