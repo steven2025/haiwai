@@ -1,0 +1,30 @@
+.candidate-compact .portal-header{padding:12px 24px;gap:10px;min-height:64px}
+.candidate-compact .portal-content{padding-top:16px}
+.candidate-compact .compact-profile{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.compact-person{display:flex;align-items:center;gap:12px;min-width:0}.compact-person>.avatar{width:42px;height:42px;flex:0 0 42px;font-size:17px}
+.compact-name{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.compact-name h1{margin:0!important;font-size:23px;line-height:1.25}.compact-name .pill{font-size:10px}
+.compact-person p{margin:7px 0 0!important;display:flex;gap:16px;flex-wrap:wrap;font-size:13px;line-height:1.5}.compact-person p>span{color:#9bb5c8}
+.compact-profile .dossier-links{margin:0;flex-shrink:0}.compact-profile .dossier-links .btn{padding:8px 12px}
+.candidate-compact .simple-language-panel{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 18px;margin:0 0 14px}
+.candidate-compact .simple-language-panel>.tiny{display:none}.candidate-compact .simple-languages{margin:0;gap:7px}.candidate-compact .language-button{padding:8px 12px}
+.candidate-compact .mode-entry-grid{margin:14px 0;gap:14px}.candidate-compact .mode-entry{padding:20px}.candidate-compact .mode-entry h2{margin:12px 0}.candidate-compact .portal-header .brand{width:auto}
+#iv-panel .iv-panel-head{padding:16px 20px}#iv-panel .iv-panel-title{font-size:16px}
+#iv-panel #ai-qcard,#iv-panel .conversation-buffer{display:none!important}
+#iv-panel #ai-transcript{padding:20px 24px;overflow:auto;flex:1;min-height:0;scroll-behavior:auto}
+#iv-panel .chat-row{padding:20px 22px;margin:0 0 20px;border:1px solid #294452;border-left:4px solid #54ddd2;border-radius:16px;background:linear-gradient(130deg,#112f3a,#10202d)}
+#iv-panel .chat-row.candidate{border-left-color:#8cb5ff;background:linear-gradient(130deg,#142b45,#10202f)}
+#iv-panel .chat-row header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px;color:#68e7dc;font-size:13px}
+#iv-panel .chat-row.candidate header{color:#a8caff}#iv-panel .chat-row header span{font-size:11px;color:#9db6c6}
+#iv-panel .chat-type-text{font-size:clamp(21px,1.55vw,28px);font-weight:580;line-height:1.85;color:#e7fffb;white-space:pre-wrap;overflow-wrap:anywhere;letter-spacing:.015em}
+#iv-panel .candidate .chat-type-text{color:#eef4ff}#iv-panel .chat-row.is-latest{border-color:#49c8ba;box-shadow:0 0 24px #31d8ba12}
+#iv-panel .candidate.is-latest{border-color:#729ee3;box-shadow:0 0 24px #5687e51a}
+.chat-typing:after{content:'▍';color:#55e4d3;animation:chat-caret .8s steps(1) infinite}.chat-empty{font-size:18px;color:#9cb5c5;padding:20px 0}
+@keyframes chat-caret{50%{opacity:0}}
+#iv-panel .iv-composer{padding:14px 18px}.conversation-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.conversation-controls>.pill{margin-right:auto}
+#ai-screen .meet-caption,#ai-screen #ai-main-btn{display:none!important}
+@media(max-width:760px){.candidate-compact .portal-header{padding:10px 16px}.candidate-compact .compact-profile{align-items:flex-start;flex-direction:column;gap:10px;padding:14px}.compact-profile .dossier-links{margin-left:54px}.compact-person p{gap:6px}.compact-person p>span{width:100%}.compact-name h1{font-size:21px}.candidate-compact .simple-language-panel{padding:12px 14px;gap:10px}.candidate-compact .language-button{padding:7px 10px}#iv-panel #ai-transcript{padding:14px}#iv-panel .chat-row{padding:16px;margin-bottom:14px}#iv-panel .chat-type-text{font-size:21px;line-height:1.8}.conversation-controls{gap:7px}.conversation-controls>.pill{width:100%;margin:0 0 4px}.conversation-controls .btn{padding:9px 11px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.chat-typing:after{animation:none}}
+
+#ai-screen .simple-ai-language{padding:10px 24px;gap:10px;min-height:52px}#ai-screen .simple-ai-language>.tiny{display:none}#ai-screen #cloud-voice-state{width:auto!important;margin-left:auto;font-size:12px;max-width:65%}#ai-screen .simple-ai-language>.pill{margin:0}@media(max-width:760px){#ai-screen .simple-ai-language{padding:10px 14px}#ai-screen #cloud-voice-state{max-width:100%;margin-left:0}}
+
+#ai-screen .stage-controls .ctl-group:has([data-action="ai-captions"]){display:none}
