@@ -1168,6 +1168,40 @@ body:has(.interview-screen){overflow-y:auto} .interview-screen{position:relative
 /* WORKFLOW_V4_STYLE */
 .flow-actions,.flow-tabs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0}.flow-tabs{border-bottom:1px solid #294354;padding-bottom:18px}.flow-assignment{margin-top:14px;padding-top:14px;border-top:1px solid #294354}.flow-assignment p,.flow-evidence p{line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}.flow-assignment small{display:block;color:#9fb7c7;line-height:1.8}.flow-assignment button{margin-top:10px}.flow-overview{display:flex;gap:28px;align-items:center;margin-top:24px}.flow-score{flex:0 0 116px;height:116px;border-radius:50%;background:radial-gradient(closest-side,#102433 79%,transparent 81%),conic-gradient(#35dfc6 calc(var(--score)*1%),#243e4e 0);display:flex;align-items:center;justify-content:center;flex-direction:column}.flow-score b{font-size:34px;color:#61e9d5}.flow-score small{color:#8ca9bd}.flow-bars>div{display:grid;grid-template-columns:32px 1fr 130px;gap:15px;align-items:center;margin:18px 0}.flow-bars b{font-size:13px;font-weight:500}.flow-track{height:12px;background:#233f50;border-radius:12px;overflow:hidden}.flow-track>span{display:block;height:100%;background:linear-gradient(90deg,#24b5c5,#48e4be);border-radius:12px}.flow-insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}.flow-insights li{line-height:1.9;margin:8px 0}.flow-insights ul{padding-left:20px}.flow-evidence{padding:18px 0;border-top:1px solid #2a4252}.flow-evidence details{margin-top:14px;padding:14px;background:#071925;border-radius:10px}.flow-evidence summary{cursor:pointer;color:#7ddbd5}.flow-evidence blockquote{margin:12px 0;border-left:3px solid #36cbbd;padding:8px 14px;color:#b6d0dc}.portal-header{flex-wrap:wrap;gap:12px}#flow-report-body>.card{margin:18px 0}.formal-entry{border-color:#3b5f91!important}.flow-overview p{line-height:1.9;overflow-wrap:anywhere}.mode-entry-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}#flow-live-text{background:#0a1c29;border:1px solid #35536b;border-radius:12px;color:#e9f4f9;padding:16px;font:inherit;line-height:1.8}@media(max-width:760px){.flow-insights{grid-template-columns:1fr}.flow-overview{align-items:flex-start;gap:16px}.flow-score{flex-basis:86px;height:86px}.flow-score b{font-size:26px}.flow-bars>div{grid-template-columns:26px 1fr 90px;gap:10px}.flow-tabs .btn{padding:9px 12px}.portal-header .brand{width:100%}.mode-entry-grid{grid-template-columns:1fr}}
 .flow-assignment p{min-height:0!important;margin:12px 0}.flow-assignment .btn{margin-top:8px}.flow-overview h2{margin:12px 0}/* WORKFLOW_V4_STYLE_END */
+
+/* COMPACT_CONVERSATION_STYLE */
+.candidate-compact .portal-header{padding:12px 24px;gap:10px;min-height:64px}
+.candidate-compact .portal-content{padding-top:16px}
+.candidate-compact .compact-profile{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.compact-person{display:flex;align-items:center;gap:12px;min-width:0}.compact-person>.avatar{width:42px;height:42px;flex:0 0 42px;font-size:17px}
+.compact-name{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.compact-name h1{margin:0!important;font-size:23px;line-height:1.25}.compact-name .pill{font-size:10px}
+.compact-person p{margin:7px 0 0!important;display:flex;gap:16px;flex-wrap:wrap;font-size:13px;line-height:1.5}.compact-person p>span{color:#9bb5c8}
+.compact-profile .dossier-links{margin:0;flex-shrink:0}.compact-profile .dossier-links .btn{padding:8px 12px}
+.candidate-compact .simple-language-panel{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 18px;margin:0 0 14px}
+.candidate-compact .simple-language-panel>.tiny{display:none}.candidate-compact .simple-languages{margin:0;gap:7px}.candidate-compact .language-button{padding:8px 12px}
+.candidate-compact .mode-entry-grid{margin:14px 0;gap:14px}.candidate-compact .mode-entry{padding:20px}.candidate-compact .mode-entry h2{margin:12px 0}.candidate-compact .portal-header .brand{width:auto}
+#iv-panel .iv-panel-head{padding:16px 20px}#iv-panel .iv-panel-title{font-size:16px}
+#iv-panel #ai-qcard,#iv-panel .conversation-buffer{display:none!important}
+#iv-panel #ai-transcript{padding:20px 24px;overflow:auto;flex:1;min-height:0;scroll-behavior:auto}
+#iv-panel .chat-row{padding:20px 22px;margin:0 0 20px;border:1px solid #294452;border-left:4px solid #54ddd2;border-radius:16px;background:linear-gradient(130deg,#112f3a,#10202d)}
+#iv-panel .chat-row.candidate{border-left-color:#8cb5ff;background:linear-gradient(130deg,#142b45,#10202f)}
+#iv-panel .chat-row header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px;color:#68e7dc;font-size:13px}
+#iv-panel .chat-row.candidate header{color:#a8caff}#iv-panel .chat-row header span{font-size:11px;color:#9db6c6}
+#iv-panel .chat-type-text{font-size:clamp(21px,1.55vw,28px);font-weight:580;line-height:1.85;color:#e7fffb;white-space:pre-wrap;overflow-wrap:anywhere;letter-spacing:.015em}
+#iv-panel .candidate .chat-type-text{color:#eef4ff}#iv-panel .chat-row.is-latest{border-color:#49c8ba;box-shadow:0 0 24px #31d8ba12}
+#iv-panel .candidate.is-latest{border-color:#729ee3;box-shadow:0 0 24px #5687e51a}
+.chat-typing:after{content:'▍';color:#55e4d3;animation:chat-caret .8s steps(1) infinite}.chat-empty{font-size:18px;color:#9cb5c5;padding:20px 0}
+@keyframes chat-caret{50%{opacity:0}}
+#iv-panel .iv-composer{padding:14px 18px}.conversation-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.conversation-controls>.pill{margin-right:auto}
+#ai-screen .meet-caption,#ai-screen #ai-main-btn{display:none!important}
+@media(max-width:760px){.candidate-compact .portal-header{padding:10px 16px}.candidate-compact .compact-profile{align-items:flex-start;flex-direction:column;gap:10px;padding:14px}.compact-profile .dossier-links{margin-left:54px}.compact-person p{gap:6px}.compact-person p>span{width:100%}.compact-name h1{font-size:21px}.candidate-compact .simple-language-panel{padding:12px 14px;gap:10px}.candidate-compact .language-button{padding:7px 10px}#iv-panel #ai-transcript{padding:14px}#iv-panel .chat-row{padding:16px;margin-bottom:14px}#iv-panel .chat-type-text{font-size:21px;line-height:1.8}.conversation-controls{gap:7px}.conversation-controls>.pill{width:100%;margin:0 0 4px}.conversation-controls .btn{padding:9px 11px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.chat-typing:after{animation:none}}
+
+#ai-screen .simple-ai-language{padding:10px 24px;gap:10px;min-height:52px}#ai-screen .simple-ai-language>.tiny{display:none}#ai-screen #cloud-voice-state{width:auto!important;margin-left:auto;font-size:12px;max-width:65%}#ai-screen .simple-ai-language>.pill{margin:0}@media(max-width:760px){#ai-screen .simple-ai-language{padding:10px 14px}#ai-screen #cloud-voice-state{max-width:100%;margin-left:0}}
+
+#ai-screen .stage-controls .ctl-group:has([data-action="ai-captions"]){display:none}
+
+/* COMPACT_CONVERSATION_STYLE_END */
 </style>
 </head>
 <body>
@@ -6166,6 +6200,82 @@ document.addEventListener('click',async e=>{const b=e.target.closest('[data-acti
 const flowExit=simpleExit;simpleExit=async function(){FLOW.serial++;FLOW.rows=[];FLOW.result=null;FLOW.assignments=[];FLOW.plan=null;return flowExit();};
 
 /* WORKFLOW_V4_END */
+/* CLOUD_SPEECH_START */
+/* AI question audio comes from TRTC TextToSpeech, with no browser voice fallback. */
+const CLOUD_SPEECH={tickets:new Map(),serial:0,player:null,url:null,cache:new Map(),bytes:0};
+function cloudSpeechKey(text){return String(text||'').trim();}
+const cloudAnalysisCall=analysisCall;
+analysisCall=async function(path,body){const d=await cloudAnalysisCall(path,body);if(path==='questions')for(const q of d.questions||[])if(q.speechTicket)CLOUD_SPEECH.tickets.set(cloudSpeechKey(q.question),q.speechTicket);if(path==='followup'&&d.speechTicket)CLOUD_SPEECH.tickets.set(cloudSpeechKey(d.question),d.speechTicket);return d;};
+function cloudSpeechStatus(message,retry=false){const host=$('.simple-ai-language');if(!host)return;let row=$('#cloud-voice-state');if(!row){row=document.createElement('div');row.id='cloud-voice-state';row.setAttribute('role','status');row.style.cssText='width:100%;font-size:12px;line-height:1.8';host.append(row);}row.textContent=message;if(retry){const b=document.createElement('button');b.className='btn btn-ghost btn-sm';b.dataset.action='cloud-speech-play';b.textContent='点击播放语音';row.append(' ',b);}}
+const cloudCancelSpeech=cancelSpeech;
+cancelSpeech=function(){CLOUD_SPEECH.serial++;if(CLOUD_SPEECH.player){CLOUD_SPEECH.player.pause();CLOUD_SPEECH.player.onended=null;CLOUD_SPEECH.player.onerror=null;CLOUD_SPEECH.player=null;}if(CLOUD_SPEECH.url){URL.revokeObjectURL(CLOUD_SPEECH.url);CLOUD_SPEECH.url=null;}cloudCancelSpeech();if(typeof particleState==='function')particleState('listening');};
+const cloudBrowserSpeak=speakText;
+speakText=function(text,locale='zh-CN',opts={}){
+ if(!SIMPLE.activeAI||ANALYSIS.mode!=='ai')return cloudBrowserSpeak(text,locale,opts);
+ cancelSpeech();const serial=CLOUD_SPEECH.serial;
+ if(!text||!S.settings.voice){cloudSpeechStatus('语音已关闭；可阅读问题后作答');opts.onDone?.();return;}
+ const key=cloudSpeechKey(text),speechTicket=CLOUD_SPEECH.tickets.get(key),language=interviewLanguages.ai.interviewer;
+ cloudSpeechStatus('正在准备'+flowLanguage(language)+'云端语音…');particleState('thinking');
+ return (async()=>{try{
+  if(!speechTicket)throw Error('当前问题缺少云端语音凭证，请更新云函数后重新开始本场面试');
+  let d=CLOUD_SPEECH.cache.get(speechTicket);
+  if(!d){d=await rtcRequest('speech/synthesize',{speechTicket});if(serial!==CLOUD_SPEECH.serial)return;if(d.provider!=='trtc'||d.language!==language||d.mime!=='audio/mpeg')throw Error('云端返回的语音语言或格式不一致，已停止播放');if(CLOUD_SPEECH.bytes+d.audio.length>10000000){CLOUD_SPEECH.cache.clear();CLOUD_SPEECH.bytes=0;}CLOUD_SPEECH.cache.set(speechTicket,d);CLOUD_SPEECH.bytes+=d.audio.length;}
+  if(serial!==CLOUD_SPEECH.serial)return;
+  const raw=atob(d.audio),bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));CLOUD_SPEECH.url=URL.createObjectURL(new Blob([bytes],{type:d.mime}));
+  const audio=new Audio(CLOUD_SPEECH.url);CLOUD_SPEECH.player=audio;
+  audio.onplaying=()=>{if(serial!==CLOUD_SPEECH.serial)return;cloudSpeechStatus('正在播放：腾讯云语音 · '+flowLanguage(d.language));particleState('speaking');opts.onSentence?.(0,text);};
+  audio.onended=()=>{if(serial!==CLOUD_SPEECH.serial)return;particleState('listening');cloudSpeechStatus('腾讯云语音 · '+flowLanguage(d.language)+' · 已播完');opts.onDone?.();};
+  audio.onerror=()=>{if(serial!==CLOUD_SPEECH.serial)return;particleState('listening');cloudSpeechStatus('云端音频播放失败；可点击下方重播，或继续文字作答');opts.onDone?.();};
+  try{await audio.play();}catch(e){if(serial!==CLOUD_SPEECH.serial)return;if(e.name==='NotAllowedError'){particleState('listening');cloudSpeechStatus('浏览器需要你点击后才能播放云端语音',true);}else throw e;}
+ }catch(e){if(serial!==CLOUD_SPEECH.serial)return;particleState('listening');const message=/Unknown.*endpoint/i.test(e.message)?'云端语音接口尚未部署，请更新 v4.1 云函数':e.message;cloudSpeechStatus('语音暂不可用：'+message+'。可继续文字作答。');showToast('云端语音未播放：'+e.message,'warn');opts.onDone?.();}})();
+};
+document.addEventListener('click',async e=>{if(!e.target.closest('[data-action="cloud-speech-play"]'))return;try{await CLOUD_SPEECH.player?.play();}catch{cloudSpeechStatus('播放未成功，请检查浏览器声音权限后重试',true);}});
+const cloudSimpleExit=simpleExit;simpleExit=async function(){cancelSpeech();CLOUD_SPEECH.tickets.clear();CLOUD_SPEECH.cache.clear();CLOUD_SPEECH.bytes=0;return cloudSimpleExit();};
+
+/* CLOUD_SPEECH_END */
+/* COMPACT_CONVERSATION_START */
+/* Compact candidate portal and a single voice-driven, animated conversation. */
+const CONVERSATION={host:null,rows:new Map(),raf:0,follow:true,stamp:0};
+const compactShell=renderShell;
+renderShell=function(){compactShell();if(!SIMPLE.auth||examiner())return;const main=$('main.portal-shell');main?.classList.add('candidate-compact');const profile=$('.portal-content>section.card');if(profile&&SIMPLE.profile){const c=SIMPLE.profile;profile.classList.add('compact-profile');profile.innerHTML=`<div class="compact-person"><span class="avatar">${esc(c.initial)}</span><div><div class="compact-name"><h1>${esc(c.name)}</h1><span class="pill teal">虚拟演示身份</span></div><p><strong>${esc(c.job)}</strong><span>${esc(c.country)} · ${esc(c.exp)}经验</span></p></div></div>${dossierLinks(c)}`;}const label=$('.simple-language-panel>b');if(label)label.textContent='面试语言';};
+function conversationCharacters(text){return typeof Intl.Segmenter==='function'?[...new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(text)].map(s=>s.segment):Array.from(text);}
+function conversationTarget(row,text){if(row.target===text)return;const next=conversationCharacters(text),old=conversationCharacters(row.shown);let common=0;while(common<old.length&&common<next.length&&old[common]===next[common])common++;row.shown=old.slice(0,common).join('');row.target=text;row.chars=next;row.position=common;row.body.textContent=row.shown;}
+function conversationTick(time){CONVERSATION.raf=0;const host=CONVERSATION.host;if(!host?.isConnected)return;let pending=false;if(time-CONVERSATION.stamp>=22){CONVERSATION.stamp=time;for(const row of CONVERSATION.rows.values()){if(row.position<row.chars.length){row.position=Math.min(row.chars.length,row.position+Math.max(1,Math.ceil((row.chars.length-row.position)/35)));row.shown=row.chars.slice(0,row.position).join('');row.body.textContent=row.shown;}row.body.classList.toggle('chat-typing',row.position<row.chars.length);pending=pending||row.position<row.chars.length;}if(CONVERSATION.follow)host.scrollTop=host.scrollHeight;}else pending=true;if(pending)CONVERSATION.raf=requestAnimationFrame(conversationTick);}
+function renderConversation(){const host=$('#ai-transcript');if(!host)return;if(CONVERSATION.host!==host){cancelAnimationFrame(CONVERSATION.raf);CONVERSATION.raf=0;CONVERSATION.rows.clear();CONVERSATION.host=host;CONVERSATION.follow=true;host.innerHTML='';host.setAttribute('aria-label','AI 面试提问与我的回答');host.addEventListener('scroll',()=>{CONVERSATION.follow=host.scrollHeight-host.scrollTop-host.clientHeight<100;});}
+ const seen=new Set(),messages=[];for(const m of AI.transcript){if(!m.src?.trim())continue;const key=m.qIndex+':'+m.who+':'+(m.who==='candidate'?m.dir+':':'')+m.src.trim();if(seen.has(key))continue;seen.add(key);messages.push({id:m.id,who:m.who,text:m.src,label:m.who==='interviewer'?(m.dir==='首题追问'?'首题追问':`核心问题 ${m.qIndex+1} / ${AI_QUESTIONS.length}`):'我的回答'});}
+ const last=messages.at(-1),draft=MEET.currentAnswer?.trim();if(draft&&!(last?.who==='candidate'&&last.text===draft))messages.push({id:'draft-answer',who:'candidate',text:draft,label:MEET.recognizing?'正在回答':'我的回答 · 待确认'});
+ const ids=new Set(messages.map(m=>m.id));for(const [id,row] of CONVERSATION.rows){if(!ids.has(id)){row.node.remove();CONVERSATION.rows.delete(id);}}
+ for(const [i,m] of messages.entries()){let row=CONVERSATION.rows.get(m.id);if(!row){const node=document.createElement('article');node.className='chat-row '+m.who;const head=document.createElement('header'),speaker=document.createElement('b'),label=document.createElement('span'),body=document.createElement('div');speaker.textContent=m.who==='interviewer'?'AI 面试官':aiCandidate().name;head.append(speaker,label);body.className='chat-type-text';node.append(head,body);host.append(node);row={node,body,label,chars:[],position:0,target:'',shown:''};CONVERSATION.rows.set(m.id,row);}row.label.textContent=m.label;row.node.classList.toggle('is-latest',i===messages.length-1);conversationTarget(row,m.text);}
+ if(!messages.length&&!host.querySelector('.chat-empty')){const empty=document.createElement('p');empty.className='chat-empty';empty.textContent='正在准备面试问题…';host.append(empty);}if(messages.length)host.querySelector('.chat-empty')?.remove();
+ if(!CONVERSATION.raf)CONVERSATION.raf=requestAnimationFrame(conversationTick);
+}
+aiPanelContent=function(){return '';};
+aiQuestionCardHTML=function(){return '';};
+function conversationControls(){const host=$('#ai-actions');if(!host)return;const text=AI.followupActive?'首题追问':`核心问题 ${AI.index+1} / ${AI_QUESTIONS.length}`;host.innerHTML=`<div class="conversation-controls"><span class="pill teal">${text}</span><button class="btn btn-ghost btn-sm" data-action="ai-replay">${icon('rotate')} 重播提问</button><button class="btn btn-ghost btn-sm" data-action="meet-clear">重新回答</button><button class="btn btn-blue" data-action="meet-mic">${icon('mic')} ${MEET.recognizing?'暂停识别':'开始回答'}</button><button class="btn btn-primary" data-action="meet-submit">${icon('check')} 回答完成</button></div>`;}
+renderMeetAnswerBox=function(){const host=$('#meet-answer-wrap');if(host){host.classList.add('conversation-buffer');host.innerHTML='<input id="meet-answer" type="hidden">';$('#meet-answer').value=MEET.currentAnswer||'';}conversationControls();renderConversation();};
+updateAIQuestion=function(){const card=$('#ai-qcard');if(card)card.replaceChildren();conversationControls();const btn=$('#ai-main-btn');if(btn)btn.hidden=true;updateAIProgress();renderConversation();};
+const conversationAdd=addAITranscript;
+addAITranscript=function(who,src,tr,dir,live){const id=conversationAdd(who,src,tr,dir,live);if(who==='candidate'){const draft=CONVERSATION.rows.get('draft-answer');if(draft&&draft.target===src){CONVERSATION.rows.delete('draft-answer');CONVERSATION.rows.set(id,draft);}}renderConversation();return id;};
+const conversationUpdate=updateAITranscript;
+updateAITranscript=function(id,field,value){conversationUpdate(id,field,value);renderConversation();};
+const conversationCaption=setMyCaption;
+setMyCaption=function(src,note){conversationCaption(src,note);renderConversation();};
+const conversationStatus=setMeetStatus;
+setMeetStatus=function(text){conversationStatus(/输入|文字作答/.test(text)?'点击「开始回答」，说完后点击「回答完成」':text);};
+meetStartListening=function(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){showToast('当前浏览器不支持语音识别，请使用支持该功能的浏览器并允许麦克风权限','warn');return;}if(MEET.recognizing)return;cancelSpeech();const question=AI.currentQuestion,index=AI.index,baseline=MEET.currentAnswer||'';const current=()=>SIMPLE.activeAI&&index===AI.index&&question===AI.currentQuestion&&!AI.answerSubmitting;
+ try{const rec=new SR();rec.lang=interviewLang('ai','candidate').locale;rec.interimResults=true;rec.continuous=true;
+  rec.onstart=()=>{if(!current())return;MEET.recognizing=true;MEET.speechStat.started=Date.now();setMeetStatus('正在听你回答…');const state=$('#meet-mic-state');if(state)state.textContent='正在识别';conversationControls();};
+  rec.onresult=e=>{if(!current())return;let transcript='';for(let i=0;i<e.results.length;i++)transcript+=e.results[i][0].transcript;MEET.currentAnswer=baseline+transcript;const input=$('#meet-answer');if(input)input.value=MEET.currentAnswer;MEET.speechStat.lastAt=Date.now();setMyCaption(MEET.currentAnswer,'');};
+  rec.onerror=e=>{if(!current())return;showToast(e.error==='not-allowed'?'麦克风权限未开启，请允许使用麦克风后重试':'语音识别中断，请重试并确认识别文字后再提交','warn');};
+  rec.onend=()=>{if(MEET.recognition!==rec)return;MEET.recognizing=false;conversationControls();setMeetStatus('识别已暂停，可继续回答或确认完成');};MEET.recognition=rec;rec.start();
+ }catch{showToast('语音识别启动失败，请检查麦克风权限后重试','warn');}
+};
+const conversationStop=meetStopListening;
+meetStopListening=function(){conversationStop();conversationControls();renderConversation();};
+aiReplay=function(){if(!AI.started)return aiStart();speakText(AI.currentQuestion,interviewLang('ai','interviewer').locale,{onDone:()=>setMeetStatus('请开始回答')});};
+document.addEventListener('click',e=>{if(!e.target.closest('[data-action="meet-clear"]')||!SIMPLE.activeAI)return;e.stopImmediatePropagation();meetStopListening();MEET.currentAnswer='';const input=$('#meet-answer');if(input)input.value='';renderConversation();setMeetStatus('已清空当前回答，可重新开始');},true);
+
+/* COMPACT_CONVERSATION_END */
 bootDemo();
 
 /* expose a tiny debug surface for local demos */
