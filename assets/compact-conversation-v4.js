@@ -38,7 +38,7 @@ meetStartListening=function(){const SR=window.SpeechRecognition||window.webkitSp
 const conversationStop=meetStopListening;
 meetStopListening=function(){conversationStop();conversationControls();renderConversation();};
 aiReplay=function(){if(!AI.started)return aiStart();speakText(AI.currentQuestion,interviewLang('ai','interviewer').locale,{onDone:()=>setMeetStatus('请开始回答')});};
-document.addEventListener('click',e=>{if(!e.target.closest('[data-action="meet-clear"]')||!SIMPLE.activeAI)return;e.stopImmediatePropagation();meetStopListening();MEET.currentAnswer='';const input=$('#meet-answer');if(input)input.value='';renderConversation();setMeetStatus('已清空当前回答，可重新开始');},true);
+document.addEventListener('click',e=>{if(!e.target.closest('[data-action="meet-clear"]')||!SIMPLE.activeAI)return;e.stopImmediatePropagation();if(typeof asrAbort==='function')asrAbort();else meetStopListening();MEET.currentAnswer='';const input=$('#meet-answer');if(input)input.value='';renderConversation();setMeetStatus('已清空当前回答，可重新开始');},true);
 
 // SpeechRecognition requests microphone access itself; answering must not depend on a camera.
 document.addEventListener('click',e=>{if(!SIMPLE.activeAI||!e.target.closest('[data-action="meet-mic"]'))return;e.stopImmediatePropagation();if(MEET.recognizing)meetStopListening();else meetStartListening();},true);
