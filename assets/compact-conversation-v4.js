@@ -26,15 +26,19 @@ const conversationCaption=setMyCaption;
 setMyCaption=function(src,note){conversationCaption(src,note);renderConversation();};
 const conversationStatus=setMeetStatus;
 setMeetStatus=function(text){conversationStatus(/输入|文字作答/.test(text)?'点击「开始回答」，说完后点击「回答完成」':text);};
-meetStartListening=function(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){showToast('当前浏览器不支持语音识别，请使用支持该功能的浏览器并允许麦克风权限','warn');return;}if(MEET.recognizing)return;cancelSpeech();const question=AI.currentQuestion,index=AI.index,baseline=MEET.currentAnswer||'';const current=()=>SIMPLE.activeAI&&index===AI.index&&question===AI.currentQuestion&&!AI.answerSubmitting;
- try{const rec=new SR();rec.lang=interviewLang('ai','candidate').locale;rec.interimResults=true;rec.continuous=true;
+function recognitionNotice(text){setMeetStatus(text);let el=$('#recognition-notice');const host=$('#ai-actions');if(!host)return;if(!el){el=document.createElement('p');el.id='recognition-notice';el.setAttribute('role','status');el.style.cssText='color:#ffd599;font-size:13px;line-height:1.7;margin:10px 0 0';host.append(el);}el.textContent=text;}
+meetStartListening=function(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){recognitionNotice('当前浏览器未提供语音识别，请在独立的 Chrome 或 Edge 中打开网页后重试');return;}if(MEET.recognizing)return;cancelSpeech();const question=AI.currentQuestion,index=AI.index,baseline=MEET.currentAnswer||'';const current=()=>SIMPLE.activeAI&&index===AI.index&&question===AI.currentQuestion&&!AI.answerSubmitting;
+ try{let recognitionError='';const rec=new SR();rec.lang=interviewLang('ai','candidate').locale;rec.interimResults=true;rec.continuous=true;
   rec.onstart=()=>{if(!current())return;MEET.recognizing=true;MEET.speechStat.started=Date.now();setMeetStatus('正在听你回答…');const state=$('#meet-mic-state');if(state)state.textContent='正在识别';conversationControls();};
   rec.onresult=e=>{if(!current())return;let transcript='';for(let i=0;i<e.results.length;i++)transcript+=e.results[i][0].transcript;MEET.currentAnswer=baseline+transcript;const input=$('#meet-answer');if(input)input.value=MEET.currentAnswer;MEET.speechStat.lastAt=Date.now();setMyCaption(MEET.currentAnswer,'');};
-  rec.onerror=e=>{if(!current())return;showToast(e.error==='not-allowed'?'麦克风权限未开启，请允许使用麦克风后重试':'语音识别中断，请重试并确认识别文字后再提交','warn');};
-  rec.onend=()=>{if(MEET.recognition!==rec)return;MEET.recognizing=false;conversationControls();setMeetStatus('识别已暂停，可继续回答或确认完成');};MEET.recognition=rec;rec.start();
- }catch{showToast('语音识别启动失败，请检查麦克风权限后重试','warn');}
+  rec.onerror=e=>{if(!current())return;const errors={'not-allowed':'麦克风权限被拒绝，请在地址栏允许麦克风后重试','service-not-allowed':'浏览器禁止语音识别服务，请使用独立浏览器重试','network':'浏览器语音识别服务连接失败；麦克风可能正常，但当前无法转成文字','audio-capture':'未检测到可用麦克风，请检查输入设备','no-speech':'未检测到讲话，请靠近麦克风后重试','language-not-supported':'当前浏览器识别服务不支持所选语言'};recognitionError=errors[e.error]||('语音识别失败：'+e.error);recognitionNotice(recognitionError);};
+  rec.onend=()=>{if(MEET.recognition!==rec)return;MEET.recognizing=false;conversationControls();if(recognitionError)recognitionNotice(recognitionError);else setMeetStatus('识别已暂停，可继续回答或确认完成');};MEET.recognition=rec;rec.start();
+ }catch(e){recognitionNotice('语音识别启动失败：'+e.name+'，请检查麦克风权限后重试');}
 };
 const conversationStop=meetStopListening;
 meetStopListening=function(){conversationStop();conversationControls();renderConversation();};
 aiReplay=function(){if(!AI.started)return aiStart();speakText(AI.currentQuestion,interviewLang('ai','interviewer').locale,{onDone:()=>setMeetStatus('请开始回答')});};
 document.addEventListener('click',e=>{if(!e.target.closest('[data-action="meet-clear"]')||!SIMPLE.activeAI)return;e.stopImmediatePropagation();meetStopListening();MEET.currentAnswer='';const input=$('#meet-answer');if(input)input.value='';renderConversation();setMeetStatus('已清空当前回答，可重新开始');},true);
+
+// SpeechRecognition requests microphone access itself; answering must not depend on a camera.
+document.addEventListener('click',e=>{if(!SIMPLE.activeAI||!e.target.closest('[data-action="meet-mic"]'))return;e.stopImmediatePropagation();if(MEET.recognizing)meetStopListening();else meetStartListening();},true);

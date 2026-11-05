@@ -1,0 +1,27 @@
+/* Readable dossiers, dimensional language controls and restrained pointer feedback. */
+.simple-person-card h2,.talent-language-card h3{font-size:25px;color:#f0f8ff}
+.simple-person-card p,.talent-language-card .talent-role{font-size:18px;color:#8fd8ff;font-weight:600}
+.simple-person-card small{font-size:15px;color:#b4c9dc;line-height:1.7}
+.simple-person-cta{font-size:17px;font-weight:700;color:#70f3d8}
+.dossier-links .btn{font-size:16px!important;color:#9ce9ff;min-height:42px}
+.dossier-body{font-size:18px;line-height:1.9;color:#d7e5f2}
+.dossier-body h2{font-size:27px;color:#98deff}.dossier-body h3,.modal-head h3{font-size:23px;color:#b8d7ff}
+.dossier-body h4{font-size:20px;color:#67efd4;border-left:3px solid #44dfcd;padding-left:12px}
+.dossier-body .kv{font-size:17px}.dossier-body .kv b{color:#ffe09a}
+.dossier-body .mode-summary{font-size:18px;color:#d0b6ff;background:#211f3b;border:1px solid #554876;padding:14px;border-radius:12px}
+.dossier-body li::marker{color:#68ead4}.dossier-body .tiny{font-size:14px}
+.compact-person p strong{font-size:17px;color:#98deff}.compact-person p>span{font-size:15px;color:#b4c9dc}
+.language-button,.candidate-compact .language-button{--language-color:#8bdcff;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:18px;font-weight:750;min-height:48px;padding:9px 15px;border-radius:12px;color:var(--language-color);border:1px solid color-mix(in srgb,var(--language-color) 45%,#26394f);background:linear-gradient(155deg,#2c435b,#101e30);box-shadow:inset 0 1px 0 #ffffff30,0 4px 0 #050c17,0 7px 15px #0005;text-shadow:0 1px 2px #0008}
+.language-button[data-language=zh]{--language-color:#ffb7ac}.language-button[data-language=en]{--language-color:#a9d7ff}.language-button[data-language=th]{--language-color:#d3bdff}.language-button[data-language=fr]{--language-color:#a5cdff}.language-button[data-language=es]{--language-color:#ffe094}.language-button[data-language=ja]{--language-color:#ffbbd7}.language-button[data-language=vi]{--language-color:#9af2c9}
+.language-button.selected{background:linear-gradient(145deg,#e1fff8,#5ee1cc);color:#073b37;border-color:#a5fff1;box-shadow:inset 0 1px 0 #fff,0 4px 0 #187a72,0 0 20px #38dcc12b;text-shadow:none}
+.language-flag{display:inline-block;width:29px;height:20px;flex-shrink:0;border-radius:4px;box-shadow:0 1px 3px #0008;overflow:hidden;vertical-align:middle}.language-flag svg{display:block;width:100%;height:100%}
+button:focus-visible,[role=button]:focus-visible{outline:3px solid #8fdbff;outline-offset:4px}
+@media(hover:hover) and (pointer:fine){
+ button,[role=button],.card,.mode-entry,.talent-language-card,.flow-assignment,.simple-language-panel{transition:translate .18s ease,box-shadow .18s ease,border-color .18s ease,filter .18s ease}
+ button:not(:disabled):hover,[role=button]:hover{translate:0 -2px;filter:brightness(1.1)}
+ button:not(:disabled):active{translate:0 1px}
+ .pointer-lit{box-shadow:inset 0 0 28px #79dfff12,0 8px 25px #0004,0 0 0 1px #70dfff60!important;background-image:radial-gradient(circle 190px at var(--pointer-x,50%) var(--pointer-y,50%),#80dbff18,transparent 85%),linear-gradient(140deg,#162d40,#0c1929)}
+ button.pointer-lit{background-image:radial-gradient(circle 100px at var(--pointer-x,50%) var(--pointer-y,50%),#ffffff20,transparent 85%)}
+}
+@media(prefers-reduced-motion:reduce){button,[role=button],.card,.mode-entry,.talent-language-card,.flow-assignment,.simple-language-panel{transition:none!important;translate:none!important}}
+@media(max-width:760px){.language-button,.candidate-compact .language-button{font-size:16px;padding:9px 11px;min-height:46px}.dossier-body{font-size:17px}.simple-person-card h2{font-size:23px}.compact-profile .dossier-links{margin-left:0}.dossier-body .kv{flex-wrap:wrap;gap:6px}.dossier-body .kv b{max-width:100%}.modal-foot{flex-wrap:wrap}}
