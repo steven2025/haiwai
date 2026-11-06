@@ -34,7 +34,7 @@ function candidateDossier(c) {
 }
 function dossierLinks(c) {return `<div class="dossier-links"><button class="btn btn-ghost btn-sm" data-action="resume-card" data-id="${esc(c.id)}">${icon('user')} 简历卡片</button><button class="btn btn-ghost btn-sm" data-action="position-card" data-id="${esc(c.id)}">${icon('briefcase')} 申请职位</button></div>`;}
 function practicePortrait(c){
- if(c.id==='practice-th-student' && /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(c.portrait||''))return '<img src="'+c.portrait+'" alt="本人头像" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">';
+ if(/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(c.portrait||''))return '<img src="'+c.portrait+'" alt="本人头像" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">';
  return esc(c.initial);
 }
 function dossierModal(id,kind) {
