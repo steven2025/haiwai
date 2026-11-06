@@ -1,10 +1,32 @@
 /* Compact candidate portal and a single voice-driven, animated conversation. */
 const CONVERSATION={host:null,rows:new Map(),raf:0,follow:true,stamp:0};
 const compactShell=renderShell;
-renderShell=function(){compactShell();if(!SIMPLE.auth||examiner())return;const main=$('main.portal-shell');main?.classList.add('candidate-compact');const profile=$('.portal-content>section.card');if(profile&&SIMPLE.profile){const c=SIMPLE.profile;profile.classList.add('compact-profile');profile.innerHTML=`<div class="compact-person"><span class="avatar">${esc(c.initial)}</span><div><div class="compact-name"><h1>${esc(c.name)}</h1><span class="pill teal">虚拟演示身份</span></div><p><strong>${esc(c.job)}</strong><span>${esc(c.country)} · ${esc(c.exp)}经验</span></p></div></div>${dossierLinks(c)}`;}const label=$('.simple-language-panel>b');if(label)label.textContent='面试语言';};
+renderShell=function(){compactShell();if(!SIMPLE.auth||examiner())return;const main=$('main.portal-shell');main?.classList.add('candidate-compact');const profile=$('.portal-content>section.card');if(profile&&SIMPLE.profile){const c=SIMPLE.profile;if(c.id==='practice-th-student'){document.querySelector('.formal-entry')?.remove();document.querySelector('[data-action="simple-live-confirm"]')?.closest('section')?.remove();}profile.classList.add('compact-profile');profile.innerHTML=`<div class="compact-person"><span class="avatar">${practicePortrait(c)}</span><div><div class="compact-name"><h1>${esc(c.name)}</h1><span class="pill teal">${c.fictional?'虚拟演示身份':'本人练习档案'}</span></div><p><strong>${esc(c.job)}</strong><span>${esc(c.country)} · ${esc(c.exp)}经验</span></p></div></div>${dossierLinks(c)}`;}const label=$('.simple-language-panel>b');if(label)label.textContent='面试语言';};
 function conversationCharacters(text){return typeof Intl.Segmenter==='function'?[...new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(text)].map(s=>s.segment):Array.from(text);}
 function conversationTarget(row,text){if(row.target===text)return;const next=conversationCharacters(text),old=conversationCharacters(row.shown);let common=0;while(common<old.length&&common<next.length&&old[common]===next[common])common++;row.shown=old.slice(0,common).join('');row.target=text;row.chars=next;row.position=common;row.body.textContent=row.shown;}
-function conversationTick(time){CONVERSATION.raf=0;const host=CONVERSATION.host;if(!host?.isConnected)return;let pending=false;if(time-CONVERSATION.stamp>=22){CONVERSATION.stamp=time;for(const row of CONVERSATION.rows.values()){if(row.position<row.chars.length){row.position=Math.min(row.chars.length,row.position+Math.max(1,Math.ceil((row.chars.length-row.position)/35)));row.shown=row.chars.slice(0,row.position).join('');row.body.textContent=row.shown;}row.body.classList.toggle('chat-typing',row.position<row.chars.length);pending=pending||row.position<row.chars.length;}if(CONVERSATION.follow)host.scrollTop=host.scrollHeight;}else pending=true;if(pending)CONVERSATION.raf=requestAnimationFrame(conversationTick);}
+function conversationTick(time){
+ CONVERSATION.raf=0;
+ const host=CONVERSATION.host;
+ if(!host?.isConnected)return;
+ let pending=false,changed=false;
+ for(const row of CONVERSATION.rows.values()){
+  const question=row.node.classList.contains('interviewer');
+  const interval=question?55:22;
+  if(row.position<row.chars.length && time>=(row.nextTick||0)){
+   const step=question?1:Math.max(1,Math.ceil((row.chars.length-row.position)/35));
+   row.position=Math.min(row.chars.length,row.position+step);
+   row.shown=row.chars.slice(0,row.position).join('');
+   row.body.textContent=row.shown;
+   row.nextTick=time+interval;
+   changed=true;
+  }
+  const typing=row.position<row.chars.length;
+  row.body.classList.toggle('chat-typing',typing);
+  pending=pending||typing;
+ }
+ if(changed && CONVERSATION.follow)host.scrollTop=host.scrollHeight;
+ if(pending)CONVERSATION.raf=requestAnimationFrame(conversationTick);
+}
 function renderConversation(){const host=$('#ai-transcript');if(!host)return;if(CONVERSATION.host!==host){cancelAnimationFrame(CONVERSATION.raf);CONVERSATION.raf=0;CONVERSATION.rows.clear();CONVERSATION.host=host;CONVERSATION.follow=true;host.innerHTML='';host.setAttribute('aria-label','AI 面试提问与我的回答');host.addEventListener('scroll',()=>{CONVERSATION.follow=host.scrollHeight-host.scrollTop-host.clientHeight<100;});}
  const seen=new Set(),messages=[];for(const m of AI.transcript){if(!m.src?.trim())continue;const key=m.qIndex+':'+m.who+':'+(m.who==='candidate'?m.dir+':':'')+m.src.trim();if(seen.has(key))continue;seen.add(key);messages.push({id:m.id,who:m.who,text:m.src,label:m.who==='interviewer'?(m.dir==='首题追问'?'首题追问':`核心问题 ${m.qIndex+1} / ${AI_QUESTIONS.length}`):'我的回答'});}
  const last=messages.at(-1),draft=MEET.currentAnswer?.trim();if(draft&&!(last?.who==='candidate'&&last.text===draft))messages.push({id:'draft-answer',who:'candidate',text:draft,label:MEET.recognizing?'正在回答':'我的回答 · 待确认'});

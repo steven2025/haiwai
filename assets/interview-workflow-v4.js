@@ -20,9 +20,9 @@ renderShell=function(){FLOW.serial++;flowShell();if(!SIMPLE.auth)return;
 };
 const flowTeacherDialog=simpleConfirmTeacher;
 simpleConfirmTeacher=function(id){flowTeacherDialog(id);$('.modal-foot')?.insertAdjacentHTML('afterbegin','<button class="btn btn-blue" data-action="flow-assign-dialog">安排 AI 初面</button>');};
-function flowAssignmentDialog(){FLOW.plan=null;const c=SIMPLE.profile;openOverlay(`<div class="modal-mask"><section class="modal-card"><div class="modal-head"><h3>安排 AI 正式初面</h3><button class="icon-btn" data-action="close-modal">${icon('x')}</button></div><div class="dossier-body"><h3>${esc(c.name)} · ${esc(c.job)}</h3>${dossierLinks(c)}<p>AI 根据职位和简历提问并追问。应聘者自行选择语言，AI 使用同一语言。完成后自动提交招聘方。</p><label>距现在截止（小时）<input id="flow-deadline" type="number" min="1" max="720" value="72"></label><label>允许参加次数<select id="flow-attempts"><option value="1">1 次</option><option value="2">2 次</option><option value="3">3 次</option></select></label><p class="tiny dim">你无需在线陪同。本任务只面向该应聘者，私人练习不会作为初面结果。</p><button class="btn btn-ghost" data-action="flow-plan">生成核心问题预览</button><div id="flow-plan-preview"><p class="tiny dim">先查看核心问题，再确认发起。应聘者选择其他语言时保留问题含义并翻译。</p></div><p id="flow-assign-error" role="status"></p></div><div class="modal-foot"><button class="btn btn-primary" data-action="flow-assign" disabled>确认发起 AI 初面</button></div></section></div>`);}
-async function flowPlan(){if(FLOW.busy)return;FLOW.busy=true;try{$('#flow-plan-preview').textContent='DeepSeek 正在根据简历和职位生成问题…';const d=await simpleAPI('ai-plan',{language:SIMPLE.language});if(!$('#flow-plan-preview'))return;FLOW.plan=d.planTicket;$('#flow-plan-preview').innerHTML='<ol>'+d.questions.map(q=>'<li>'+esc(q.question)+'</li>').join('')+'</ol>';$('.modal-foot [data-action="flow-assign"]').disabled=false;}catch(e){if($('#flow-plan-preview'))$('#flow-plan-preview').textContent=e.message;}finally{FLOW.busy=false;}}
-async function flowAssign(){if(FLOW.busy)return;FLOW.busy=true;try{await simpleAPI('ai-assign',{deadlineHours:Number($('#flow-deadline').value),maxAttempts:Number($('#flow-attempts').value),planTicket:FLOW.plan});closeOverlay();showToast('AI 初面已安排，应聘者工作台会自动显示');}catch(e){$('#flow-assign-error').textContent=e.message;}finally{FLOW.busy=false;}}
+function flowAssignmentDialog(){FLOW.plan=null;const c=SIMPLE.profile;openOverlay(`<div class="modal-mask"><section class="modal-card"><div class="modal-head"><h3>安排 AI 正式初面</h3><button class="icon-btn" data-action="close-modal">${icon('x')}</button></div><div class="dossier-body"><h3>${esc(c.name)} · ${esc(c.job)}</h3>${dossierLinks(c)}<p>AI 根据职位和简历提问并追问。应聘者自行选择语言，AI 使用同一语言。完成后自动提交招聘方。</p><label>距现在截止（小时）<input id="flow-deadline" type="number" min="1" max="720" value="72"></label><label>允许参加次数<select id="flow-attempts"><option value="1">1 次</option><option value="2">2 次</option><option value="3">3 次</option></select></label><p class="tiny dim">你无需在线陪同。本任务只面向该应聘者，私人练习不会作为初面结果。</p><button class="btn btn-ghost" data-action="flow-plan">生成核心问题预览</button><div id="flow-plan-preview"><p class="tiny dim">先查看核心问题，再确认发起。应聘者选择其他语言时保留问题含义并翻译。</p></div><p id="flow-assign-error" role="status"></p></div><div class="modal-foot"><button class="btn btn-primary" data-action="flow-assign" disabled>确认题目并发起 AI 初面</button></div></section></div>`);}
+async function flowPlan(){if(FLOW.busy)return;FLOW.busy=true;try{$('#flow-plan-preview').textContent='DeepSeek 正在根据简历和职位生成问题…';const d=await simpleAPI('ai-plan',{language:SIMPLE.language});if(!$('#flow-plan-preview'))return;FLOW.plan=d.planTicket;$('#flow-plan-preview').innerHTML='<ol>'+d.questions.map((q,i)=>'<li><label>核心问题 '+(i+1)+'<textarea class="flow-question-edit" rows="3" maxlength="1000" style="width:100%;font:inherit" required>'+esc(q.question)+'</textarea></label></li>').join('')+'</ol>';$('.modal-foot [data-action="flow-assign"]').disabled=false;}catch(e){if($('#flow-plan-preview'))$('#flow-plan-preview').textContent=e.message;}finally{FLOW.busy=false;}}
+async function flowAssign(){if(FLOW.busy)return;FLOW.busy=true;try{await simpleAPI('ai-assign',{deadlineHours:Number($('#flow-deadline').value),maxAttempts:Number($('#flow-attempts').value),planTicket:FLOW.plan,editedQuestions:$$('#flow-plan-preview textarea').map(el=>el.value.trim())});closeOverlay();showToast('AI 初面已安排，应聘者工作台会自动显示');}catch(e){$('#flow-assign-error').textContent=e.message;}finally{FLOW.busy=false;}}
 async function flowRefreshAssignments(){const el=$('#flow-assignments'),serial=FLOW.serial;if(!el||examiner())return;try{const d=await simpleAPI('ai-assignments');if(serial!==FLOW.serial||!el.isConnected)return;FLOW.assignments=d.assignments;el.innerHTML=d.assignments.length?d.assignments.map(a=>{const expired=a.deadline*1000<Date.now(),exhausted=a.attempt>=a.maxAttempts&&a.status==='completed';return `<article class="flow-assignment"><b>${esc(a.company)}</b><p>${esc(a.job)}</p><small>截止 ${new Date(a.deadline*1000).toLocaleString()} · 已参加 ${a.attempt}/${a.maxAttempts} 次</small><p>${expired?'已截止':exhausted?'已提交，等待招聘方反馈':a.status==='started'?'已开始，可返回当前场次（不会增加次数）':a.status==='completed'?'已完成一次，可再次参加':'待你确认参加'}</p>${!expired&&!exhausted?`<button class="btn btn-blue btn-sm" data-action="flow-formal-confirm" data-id="${a.id}">${a.status==='started'?'返回本场初面':'确认参加正式初面'}</button>`:''}</article>`;}).join(''):'<p class="tiny dim">暂未收到公司安排。可先进行私人练习。</p>';}catch(e){if(el.isConnected)el.textContent='安排暂未同步：'+e.message;}}
 const flowPoll=pollSimple;
 pollSimple=async function(waiting){await flowPoll(waiting);await flowRefreshAssignments();};
@@ -46,3 +46,36 @@ const flowEnd=humanEndConfirm;humanEndConfirm=async function(){if(examiner()&&SI
 document.addEventListener('click',async e=>{const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action;if(!a.startsWith('flow-'))return;e.stopImmediatePropagation();try{switch(a){case 'flow-assign-dialog':flowAssignmentDialog();break;case 'flow-plan':await flowPlan();break;case 'flow-assign':await flowAssign();break;case 'flow-formal-confirm':flowConfirmFormal(b.dataset.id);break;case 'flow-formal-start':closeOverlay();await simpleStartAI('formal',b.dataset.id);break;case 'flow-results':await flowResults();break;case 'flow-tab':await flowResults(b.dataset.kind);break;case 'flow-report':{const r=FLOW.rows.find(r=>r.id===b.dataset.id&&r.candidateId===b.dataset.candidate);if(r)flowReportFrame(r);break;}case 'flow-back-results':await flowResults(FLOW.result?.kind);break;case 'flow-report-language':FLOW.language=b.dataset.language;await flowLoadReport();break;case 'flow-report-retry':await flowLoadReport();break;case 'flow-publish':await flowPublish();break;case 'flow-own-latest':{const d=await simpleAPI('results');const r=d.results.find(x=>x.kind==='practice'&&x.id===ANALYSIS.receipt?.sessionId);if(r)flowReportFrame(r);}break;case 'flow-practice-again':await simpleStartAI('practice');break;case 'flow-live-dialog':flowLiveDialog();break;case 'flow-save-live':await flowSaveLive();break;}}catch(err){showToast(err.message,'warn');}},true);
 
 const flowExit=simpleExit;simpleExit=async function(){FLOW.serial++;FLOW.rows=[];FLOW.result=null;FLOW.assignments=[];FLOW.plan=null;return flowExit();};
+
+// Keep live-interview edits in this room's guide, including across panel redraws.
+const renderReadOnlyGuide=renderGuide;
+renderGuide=function(mode){
+ renderReadOnlyGuide(mode);
+ if(mode!=='human'||!examiner())return;
+ const guide=guideSessions.human,panel=$('#interview-guide-human');
+ const list=panel?.querySelector('.guide-questions');
+ if(!list||guide?.source!=='ai')return;
+ const editing=!!guide.editDraft;
+ if(editing){
+  list.querySelectorAll('li').forEach((li,index)=>{
+   const field=document.createElement('textarea');
+   field.rows=3;field.maxLength=1000;field.style.width='100%';field.style.font='inherit';
+   field.setAttribute('aria-label','核心问题 '+(index+1));field.value=guide.editDraft[index];
+   field.disabled=index===0 && !!guide.followup;
+   field.oninput=()=>{guide.editDraft[index]=field.value;};
+   li.replaceChildren(field);
+  });
+  const follow=panel.querySelector('[data-action="guide-followup"]');if(follow)follow.disabled=true;
+ }
+ const button=document.createElement('button');button.className='btn btn-blue btn-sm';
+ button.textContent=editing?'确认题目':'修改核心问题';button.disabled=!!guide.followRequest;
+ button.onclick=()=>{
+  if(editing){
+   if(guide.editDraft.some(q=>!q.trim())){showToast('请填写每一道问题','warn');return;}
+   guide.questions=guide.questions.map((q,i)=>q.question===guide.editDraft[i].trim()?q:{...q,question:guide.editDraft[i].trim(),translation:''});
+   guide.editDraft=null;guide.status='面试官已确认题目';
+  }else guide.editDraft=guide.questions.map(q=>q.question);
+  renderGuide(mode);
+ };
+ list.after(button);
+};

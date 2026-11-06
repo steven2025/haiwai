@@ -28,3 +28,13 @@
 #ai-screen .simple-ai-language{padding:10px 24px;gap:10px;min-height:52px}#ai-screen .simple-ai-language>.tiny{display:none}#ai-screen #cloud-voice-state{width:auto!important;margin-left:auto;font-size:12px;max-width:65%}#ai-screen .simple-ai-language>.pill{margin:0}@media(max-width:760px){#ai-screen .simple-ai-language{padding:10px 14px}#ai-screen #cloud-voice-state{max-width:100%;margin-left:0}}
 
 #ai-screen .stage-controls .ctl-group:has([data-action="ai-captions"]){display:none}
+
+/* Bound the interview columns so transcript growth stays inside the reading pane. */
+@media (min-width:1001px){
+  #ai-screen .iv-body{height:max(480px,calc(100dvh - 150px));min-height:0;grid-template-rows:minmax(0,1fr)}
+}
+#ai-screen #iv-panel{overflow:hidden;min-height:0}
+#ai-screen #ai-transcript{overflow-y:auto;overflow-x:hidden;scrollbar-gutter:stable;overscroll-behavior-y:contain;max-height:none}
+@media (max-width:1000px){
+  #ai-screen #iv-panel{height:clamp(360px,65dvh,650px);flex:none}
+}
