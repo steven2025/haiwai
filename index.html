@@ -1167,7 +1167,40 @@ body:has(.interview-screen){overflow-y:auto} .interview-screen{position:relative
 
 /* WORKFLOW_V4_STYLE */
 .flow-actions,.flow-tabs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0}.flow-tabs{border-bottom:1px solid #294354;padding-bottom:18px}.flow-assignment{margin-top:14px;padding-top:14px;border-top:1px solid #294354}.flow-assignment p,.flow-evidence p{line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}.flow-assignment small{display:block;color:#9fb7c7;line-height:1.8}.flow-assignment button{margin-top:10px}.flow-overview{display:flex;gap:28px;align-items:center;margin-top:24px}.flow-score{flex:0 0 116px;height:116px;border-radius:50%;background:radial-gradient(closest-side,#102433 79%,transparent 81%),conic-gradient(#35dfc6 calc(var(--score)*1%),#243e4e 0);display:flex;align-items:center;justify-content:center;flex-direction:column}.flow-score b{font-size:34px;color:#61e9d5}.flow-score small{color:#8ca9bd}.flow-bars>div{display:grid;grid-template-columns:32px 1fr 130px;gap:15px;align-items:center;margin:18px 0}.flow-bars b{font-size:13px;font-weight:500}.flow-track{height:12px;background:#233f50;border-radius:12px;overflow:hidden}.flow-track>span{display:block;height:100%;background:linear-gradient(90deg,#24b5c5,#48e4be);border-radius:12px}.flow-insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}.flow-insights li{line-height:1.9;margin:8px 0}.flow-insights ul{padding-left:20px}.flow-evidence{padding:18px 0;border-top:1px solid #2a4252}.flow-evidence details{margin-top:14px;padding:14px;background:#071925;border-radius:10px}.flow-evidence summary{cursor:pointer;color:#7ddbd5}.flow-evidence blockquote{margin:12px 0;border-left:3px solid #36cbbd;padding:8px 14px;color:#b6d0dc}.portal-header{flex-wrap:wrap;gap:12px}#flow-report-body>.card{margin:18px 0}.formal-entry{border-color:#3b5f91!important}.flow-overview p{line-height:1.9;overflow-wrap:anywhere}.mode-entry-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}#flow-live-text{background:#0a1c29;border:1px solid #35536b;border-radius:12px;color:#e9f4f9;padding:16px;font:inherit;line-height:1.8}@media(max-width:760px){.flow-insights{grid-template-columns:1fr}.flow-overview{align-items:flex-start;gap:16px}.flow-score{flex-basis:86px;height:86px}.flow-score b{font-size:26px}.flow-bars>div{grid-template-columns:26px 1fr 90px;gap:10px}.flow-tabs .btn{padding:9px 12px}.portal-header .brand{width:100%}.mode-entry-grid{grid-template-columns:1fr}}
-.flow-assignment p{min-height:0!important;margin:12px 0}.flow-assignment .btn{margin-top:8px}.flow-overview h2{margin:12px 0}/* WORKFLOW_V4_STYLE_END */
+.flow-assignment p{min-height:0!important;margin:12px 0}.flow-assignment .btn{margin-top:8px}.flow-overview h2{margin:12px 0}
+#flow-report-body{font-size:19px;line-height:1.75}
+#flow-report-body h2{font-size:30px}#flow-report-body h3{font-size:25px;margin:0 0 20px}
+#flow-report-body .card{border:1px solid #355266;background:linear-gradient(135deg,#112a3b,#0a1928);border-radius:24px;padding:28px}
+#flow-report-body .flow-overview{padding:34px;gap:34px}
+#flow-report-body .flow-score{flex:0 0 170px;height:170px;background:radial-gradient(closest-side,#102433 76%,transparent 78%),conic-gradient(#45e4bf calc(var(--score)*1%),#284357 0);box-shadow:0 0 36px #36dfbd18}
+#flow-report-body .flow-score b{font-size:52px}#flow-report-body .flow-score small{font-size:19px}
+.flow-chart-grid{display:grid;grid-template-columns:minmax(240px,.9fr) minmax(0,1.3fr);align-items:center;gap:30px}
+.flow-chart-grid.bars-only{grid-template-columns:1fr}.flow-chart-grid svg{width:100%;max-width:420px;margin:auto;display:block}.flow-chart-grid svg text{font-size:20px;font-weight:700}
+#flow-report-body .flow-bars>div{grid-template-columns:44px minmax(0,1fr) 110px;gap:14px;margin:28px 0}
+#flow-report-body .flow-bars b,#flow-report-body .flow-bars strong{font-size:19px;color:var(--bar-color)}
+#flow-report-body .flow-track{height:18px}#flow-report-body .flow-track>span{background:linear-gradient(90deg,color-mix(in srgb,var(--bar-color),#18334b 35%),var(--bar-color))}
+#flow-report-body .flow-insights>.card:nth-child(1){border-top:4px solid #46e3bf}
+#flow-report-body .flow-insights>.card:nth-child(2){border-top:4px solid #ffcc75}
+#flow-report-body .flow-insights>.card:nth-child(3){border-top:4px solid #c19bff}
+#flow-report-body .flow-insights>.card:nth-child(1) h3{color:#46e3bf}
+#flow-report-body .flow-insights>.card:nth-child(2) h3{color:#ffcc75}
+#flow-report-body .flow-insights>.card:nth-child(3) h3{color:#c19bff}
+.flow-evidence>summary{cursor:pointer;font-size:21px;font-weight:650;color:#9fceff;line-height:1.6}
+.flow-evidence>summary b{display:inline-block;color:#46e3bf;margin-left:12px}#flow-report-body .tiny{font-size:16px}
+@media(max-width:900px){.flow-insights,.flow-chart-grid{grid-template-columns:1fr}}
+@media(max-width:600px){#flow-report-body .card{padding:20px}#flow-report-body .flow-overview{flex-direction:column;align-items:center;padding:24px}#flow-report-body h2{font-size:25px}#flow-report-body .flow-bars>div{grid-template-columns:34px minmax(0,1fr) 86px;gap:8px}#flow-report-body .flow-bars strong{font-size:16px}.flow-evidence>summary{font-size:19px}}
+
+#hu-transcript .live-caption{padding:18px 20px;margin:14px 0;border:1px solid #315167;border-left:4px solid #65b9ff;border-radius:16px;background:#102535}
+#hu-transcript .live-caption.candidate{border-left-color:#42dfc2}
+#hu-transcript .live-caption header{font-size:15px;color:#a3bed0}
+#hu-transcript .live-caption p{font-size:21px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0}
+#hu-transcript .live-caption .live-translation{color:#60ead2;font-size:23px;font-weight:600}
+#hu-transcript{min-height:0;overflow-y:auto;overscroll-behavior:contain;max-height:65vh}
+#hu-screen .rtc-call-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+#live-interpretation-state{font-size:15px;flex:1 1 200px}
+#hu-screen .rtc-call-actions [hidden]{display:none!important}
+#hu-screen.hide-tr .live-translation{display:none}
+/* WORKFLOW_V4_STYLE_END */
 
 /* COMPACT_CONVERSATION_STYLE */
 .candidate-compact .portal-header{padding:12px 24px;gap:10px;min-height:64px}
@@ -5938,9 +5971,9 @@ async function rtcCreateRoom(){
 }
 async function rtcLoadSDK(){if(window.TRTC)return window.TRTC;await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='assets/trtc-sdk/trtc.js';script.onload=resolve;script.onerror=()=>reject(Error('TRTC SDK 加载失败，请检查 assets/trtc-sdk/trtc.js'));document.head.appendChild(script);});if(!window.TRTC)throw Error('TRTC SDK 未就绪');return window.TRTC;}
 const rtcOriginalRoom=humanRoomHTML;
-humanRoomHTML=function(){let html=rtcOriginalRoom();html=html.replace('<video id="local-video" autoplay playsinline muted></video>','<div id="rtc-local-view" class="rtc-video-view"></div>').replace('<video id="remote-video" autoplay playsinline hidden></video>','<div id="rtc-remote-view" class="rtc-video-view"></div>');html=html.replace('本地预览 · 等待接入','正在连接房间').replaceAll('双向语言互译</span>','原声通话</span>').replace('远程视频将在连接成功后显示。当前尚未接入 TRTC，不会由 AI 代替应聘者回答。','对方加入后，视频画面会自动显示。').replace('当前仅支持本地设备预览。语言按钮用于配置面试偏好，云端翻译与译音尚未启用。','已接入 TRTC 音视频。当前播放原声，云端字幕与译音尚未开启。').replace('当前为本地候场预览，远程连线及云端同传待接入。','房间语言已锁定；更换语言请退出后重新创建房间。').replace('尚未建立远程连接','TRTC 连接状态见顶部').replace('当前未连接，不生成模拟对话。','字幕同传尚未开启，不生成模拟对话。');
+humanRoomHTML=function(){let html=rtcOriginalRoom();html=html.replace('<video id="local-video" autoplay playsinline muted></video>','<div id="rtc-local-view" class="rtc-video-view"></div>').replace('<video id="remote-video" autoplay playsinline hidden></video>','<div id="rtc-remote-view" class="rtc-video-view"></div>');html=html.replace('本地预览 · 等待接入','正在连接房间').replaceAll('双向语言互译</span>','双向语言互译</span>').replace('远程视频将在连接成功后显示。当前尚未接入 TRTC，不会由 AI 代替应聘者回答。','对方加入后，视频画面会自动显示。').replace('当前仅支持本地设备预览。语言按钮用于配置面试偏好，云端翻译与译音尚未启用。','双方按所选语言发言，字幕实时更新，译音按短句播放。').replace('当前为本地候场预览，远程连线及云端同传待接入。','房间语言已锁定；更换语言请退出后重新创建房间。').replace('尚未建立远程连接','TRTC 连接状态见顶部').replace('当前未连接，不生成模拟对话。','等待双方发言，原文与译文将在此显示。');
  if(RTC_SESSION.role==='candidate'){html=html.replace('面试官 · 你','应聘者 · 你').replace('我 · 招聘官','我 · 应聘者').replace('等待真人应聘者加入','等待真人面试官加入').replace('真人应聘者</span>','真人面试官</span>');html=html.replace('<div class="n">林岚</div>','<div class="n">'+esc(aiCandidate().name)+'</div>').replace('<div class="n">'+esc(aiCandidate().name)+'</div>\n              <div class="r">应聘者 · 尚未连线</div>','<div class="n">林岚</div><div class="r">真人面试官</div>');}
- return html.replace('<div class="iv-footnote">','<div class="rtc-call-actions"><button class="btn btn-ghost btn-sm" data-action="rtc-reconnect">重新连接</button><span>双方原声 · 同传未开启 · 未录制</span></div><div class="iv-footnote">');};
+ return html.replace('<div class="iv-footnote">','<div class="rtc-call-actions"><button class="btn btn-ghost btn-sm" data-action="rtc-reconnect">重新连接</button><span>正在准备同传</span></div><div class="iv-footnote">');};
 updateHumanHeader=function(){rtcStatus(RTC_SESSION.connected?(RTC_SESSION.remote?'双方已连线 · 原声通话':'已进房 · 等待对方加入'):'尚未连接');document.querySelectorAll('[data-action="human-mic"]').forEach(b=>{b.classList.toggle('active',HUMAN.micOn);b.innerHTML=icon(HUMAN.micOn?'mic':'micOff');});document.querySelectorAll('[data-action="human-cam"]').forEach(b=>{b.classList.toggle('active',HUMAN.camOn);b.innerHTML=icon(HUMAN.camOn?'video':'videoOff');});const badge=$('#hu-screen .meet-pane:first-child .meet-pane-top .stage-badge:last-child');if(badge)badge.textContent=HUMAN.camOn?'CAMERA ON':'CAMERA OFF';const remoteRole=$('#hu-screen .meet-pane:nth-child(2) .meet-pane-name .r');if(remoteRole)remoteRole.textContent=RTC_SESSION.remote?'真人参与者 · 已连接':'真人参与者 · 待加入';};
 async function rtcJoin(video){
  if(RTC_SESSION.busy||RTC_SESSION.connected)return;if(!RTC_SESSION.ticket){showToast('请先创建房间或打开邀请链接','warn');return;}
@@ -5953,6 +5986,7 @@ async function rtcJoin(video){
   for(const stream of [HUMAN.stream,HUMAN.previewStream])stream?.getTracks().forEach(t=>t.stop());HUMAN.stream=null;HUMAN.previewStream=null;HUMAN.started=true;HUMAN.ended=false;HUMAN.camOn=false;HUMAN.micOn=false;
   currentView='human-room';app.innerHTML=humanRoomHTML();rtcLanguageLock(true);if(RTC_SESSION.role==='interviewer'){renderGuide('human');prepareGuide('human');}else{$('#interview-guide-human')?.remove();$('#hu-screen .iv-panel-title').textContent='面试记录 · 等待字幕接入';}
   const client=SDK.create();RTC_SESSION.client=client;
+  const interpretation=liveInterpretationBind(client,SDK,credentials);
   const active=()=>generation===RTC_SESSION.generation&&RTC_SESSION.client===client;
   const remoteWaiting=text=>{const p=$('#hu-screen .waiting-remote');if(p){p.style.display='grid';const h=p.querySelector('h3');if(h)h.textContent=text;}};
   client.on(SDK.EVENT.REMOTE_USER_ENTER,({userId})=>{if(!active()||!userId.startsWith(RTC_SESSION.role==='interviewer'?'c_':'i_'))return;RTC_SESSION.remote=true;updateHumanHeader();remoteWaiting('对方已加入，等待摄像头画面');});
@@ -5963,17 +5997,18 @@ async function rtcJoin(video){
   client.on(SDK.EVENT.ERROR,()=>{if(active())rtcStatus('音视频发生错误，请检查设备权限及网络');});
   client.on(SDK.EVENT.KICKED_OUT,()=>{if(active()){RTC_SESSION.connected=false;rtcStatus('已从房间断开，可能同一邀请在其他设备打开');}});
   client.on(SDK.EVENT.AUTOPLAY_FAILED,()=>{if(active())showToast('浏览器阻止播放，请点击页面中的播放提示','warn');});
-  rtcStatus('正在连接 TRTC…');await client.enterRoom({sdkAppId:credentials.sdkAppId,strRoomId:credentials.strRoomId,userId:credentials.userId,userSig:credentials.userSig,scene:'rtc'});
+  rtcStatus('正在连接 TRTC…');await client.enterRoom({sdkAppId:credentials.sdkAppId,strRoomId:credentials.strRoomId,userId:credentials.userId,userSig:credentials.userSig,scene:'rtc',autoReceiveAudio:false});
   if(!active()){await client.exitRoom();client.destroy();return;}
   RTC_SESSION.connected=true;startHumanTimer();
   try{await client.startLocalAudio();HUMAN.micOn=true;}catch{showToast('麦克风未开启，请允许权限后点击麦克风','warn');}
   if(video){try{await client.startLocalVideo({view:'rtc-local-view',option:{profile:'480p'}});HUMAN.camOn=true;$('#local-placeholder').style.display='none';}catch{showToast('摄像头未开启，仍可语音面试','warn');}}
   updateHumanHeader();
+  await liveInterpretationReady(interpretation);
  }catch(e){rtcStatus('加入失败：'+e.message);showToast(e.message,'warn');if(RTC_SESSION.client){try{await RTC_SESSION.client.exitRoom();}catch{}try{RTC_SESSION.client.destroy();}catch{}RTC_SESSION.client=null;}RTC_SESSION.connected=false;}
  finally{RTC_SESSION.busy=false;}
 }
 function needSecureRTC(){if(!window.isSecureContext)throw Error('视频面试需使用 HTTPS；本机可使用 http://127.0.0.1:8787');}
-async function rtcLeave(){++RTC_SESSION.generation;const client=RTC_SESSION.client;RTC_SESSION.client=null;RTC_SESSION.connected=false;RTC_SESSION.remote=false;stopHumanTimer();if(client){try{await client.stopLocalAudio();}catch{}try{await client.stopLocalVideo();}catch{}try{await client.exitRoom();}catch{}try{client.destroy();}catch{}}HUMAN.micOn=false;HUMAN.camOn=false;}
+async function rtcLeave(reconnecting=false){await liveInterpretationLeave(reconnecting);++RTC_SESSION.generation;const client=RTC_SESSION.client;RTC_SESSION.client=null;RTC_SESSION.connected=false;RTC_SESSION.remote=false;stopHumanTimer();if(client){try{await client.stopLocalAudio();}catch{}try{await client.stopLocalVideo();}catch{}try{await client.exitRoom();}catch{}try{client.destroy();}catch{}}HUMAN.micOn=false;HUMAN.camOn=false;}
 const rtcOldMic=toggleHumanMic,rtcOldCam=toggleHumanCam;
 toggleHumanMic=async function(){if(RTC_SESSION.busy)return;if(!RTC_SESSION.client)return rtcOldMic();try{if(HUMAN.micOn){await RTC_SESSION.client.stopLocalAudio();HUMAN.micOn=false;}else{await RTC_SESSION.client.startLocalAudio();HUMAN.micOn=true;}updateHumanHeader();}catch{showToast('麦克风操作失败，请检查设备权限','warn');}};
 toggleHumanCam=async function(){if(RTC_SESSION.busy)return;if(!RTC_SESSION.client)return rtcOldCam();try{if(HUMAN.camOn){await RTC_SESSION.client.stopLocalVideo();HUMAN.camOn=false;$('#local-placeholder').style.display='flex';}else{await RTC_SESSION.client.startLocalVideo({view:'rtc-local-view',option:{profile:'480p'}});HUMAN.camOn=true;$('#local-placeholder').style.display='none';}updateHumanHeader();}catch{showToast('摄像头操作失败，请检查设备权限','warn');}};
@@ -5985,7 +6020,7 @@ document.addEventListener('click',async e=>{const b=e.target.closest('[data-acti
  case 'rtc-health':try{const h=await rtcRequest('health');RTC_SESSION.aiEnabled=h.aiEnabled;rtcStatus(h.configured?'云函数已连接 · '+(h.aiEnabled?'同传能力已配置，尚未启动':'同传未开启'):'云函数环境变量尚未填齐');}catch(err){rtcStatus('连接检查失败：'+err.message);}break;
  case 'rtc-join':await rtcJoin(b.dataset.video==='1');break;
  case 'rtc-copy':try{await navigator.clipboard.writeText(RTC_SESSION.invite);showToast('邀请链接已复制');}catch{$('#rtc-invite-url')?.select();showToast('请复制选中的邀请链接');}break;
- case 'rtc-reconnect':if(!RTC_SESSION.busy){await rtcLeave();await rtcJoin(true);}break;
+ case 'rtc-reconnect':if(!RTC_SESSION.busy){await rtcLeave(true);await rtcJoin(true);}break;
 }});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-action="interview-language"][data-mode="human"]');if(b&&RTC_SESSION.ticket){e.stopImmediatePropagation();showToast('房间语言已锁定，请退出并重新创建以更改');}},true);
 window.addEventListener('pagehide',()=>{rtcLeave();});
@@ -6056,7 +6091,7 @@ const particleSubmit=submitMeetAnswer;submitMeetAnswer=async function(){if(AI.in
 function setVideoExpanded(pane){const parent=pane.closest('.meet-stage');const expanded=pane.classList.toggle('video-expanded');parent.classList.toggle('has-expanded',expanded);parent.querySelectorAll('.meet-pane').forEach(p=>{if(p!==pane)p.classList.remove('video-expanded');});parent.querySelectorAll('.meet-pane').forEach(p=>{const button=p.querySelector('.video-expand');button.textContent=p.classList.contains('video-expanded')?'还原 ↙':'放大 ↗';button.setAttribute('aria-pressed',String(p.classList.contains('video-expanded')));});}
 const portalRoom=humanRoomHTML;humanRoomHTML=function(){return portalRoom().replaceAll('<div class="meet-pane-top">','<button class="video-expand" data-action="video-expand" aria-label="放大或还原视频">放大 ↗</button><div class="meet-pane-top">');};
 // On live rooms, transcript collection is explicitly started by the interviewer.
-const portalRtcJoin=rtcJoin;rtcJoin=async function(video){await portalRtcJoin(video);if(RTC_SESSION.connected&&RTC_SESSION.role==='interviewer'){const controls=$('.rtc-call-actions');if(controls&&!$('#live-transcribe-start'))controls.insertAdjacentHTML('afterbegin','<button id="live-transcribe-start" class="btn btn-blue btn-sm" data-action="live-transcribe">开启实时转录</button><button class="btn btn-ghost btn-sm" data-action="live-review">评价本场实际回答</button>');}};
+const portalRtcJoin=rtcJoin;rtcJoin=async function(video){await portalRtcJoin(video);if(RTC_SESSION.connected&&RTC_SESSION.role==='interviewer'){const controls=$('.rtc-call-actions');if(controls&&!$('#live-transcribe-start'))controls.insertAdjacentHTML('afterbegin','<button class="btn btn-ghost btn-sm" data-action="live-review">评价本场实际回答</button>');}};
 // This is a UI role gate, not a replacement for backend ticket authorization.
 document.addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;const action=b.dataset.action;if(!examiner()&&['open-candidate','start-human','start-ai','analysis-evaluate','live-review','publish-job','add-candidate'].includes(action)){e.stopImmediatePropagation();showToast('此操作属于面试官页面','warn');}},true);
 document.addEventListener('click',async e=>{const b=e.target.closest('[data-action]');if(!b)return;switch(b.dataset.action){
@@ -6093,7 +6128,7 @@ async function evaluateLiveAnswers(){
  try{const auth=await analysisSession('human');const result=await analysisCall('evaluate',{analysisTicket:auth.analysisTicket,answers:[{question:'本场真人面试问题与交流',text:answers.join('\n')}]});const r=result.review;openOverlay(`<div class="modal-mask" data-action="close-modal"><section class="modal-card dossier-modal"><div class="modal-head"><h3>DeepSeek · 本场真人面试评价</h3><button class="icon-btn" data-action="close-modal">${icon('x')}</button></div><div class="dossier-body"><h2>${r.overall===null?'证据不足':r.overall+' / 100'}</h2><p>${esc(r.summary)}</p>${r.items.map(i=>`<p>${esc(i.comment)}</p>${i.evidence.map(q=>`<blockquote>${esc(q)}</blockquote>`).join('')}`).join('')}<h4>待核实</h4><ul>${r.risks.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p class="tiny dim">${esc(r.notice)}</p></div></section></div>`);}catch(e){showToast('评价未生成：'+e.message,'warn');}
 }
 const analysisLeave=rtcLeave;
-rtcLeave=async function(){clearTimeout(LIVE_ANALYSIS.firstTimer);if(RTC_SESSION.taskToken){try{await rtcRequest('stop',{taskToken:RTC_SESSION.taskToken});RTC_SESSION.taskToken='';sessionStorage.removeItem('rtcActiveTask');LIVE_ANALYSIS.tasks=[];}catch(e){showToast('转录停止失败，停止凭证已保留，请重试退出或在控制台停止任务','warn');}}await analysisLeave();};
+rtcLeave=async function(reconnecting=false){clearTimeout(LIVE_ANALYSIS.firstTimer);if(RTC_SESSION.taskToken){try{await rtcRequest('stop',{taskToken:RTC_SESSION.taskToken});RTC_SESSION.taskToken='';sessionStorage.removeItem('rtcActiveTask');LIVE_ANALYSIS.tasks=[];}catch(e){showToast('转录停止失败，停止凭证已保留，请重试退出或在控制台停止任务','warn');}}await analysisLeave(reconnecting);};
 
 // Freeze invited languages and invalidate local plans when a draft language changes.
 document.addEventListener('click',e=>{const b=e.target.closest('[data-action="interview-language"]');if(!b)return;if(b.dataset.mode==='ai' && ANALYSIS.invited){e.stopImmediatePropagation();showToast('本场语言由面试邀请确定，请联系面试官修改','warn');return;}if((b.dataset.mode==='ai'&&!AI.started)||b.dataset.mode==='human'&&!RTC_SESSION.connected){ANALYSIS.current=null;}},true);
@@ -6127,14 +6162,14 @@ function simpleConfirmTeacher(id){const c=simpleProfiles().find(x=>x.id===id);if
 function simpleWaiting(){closeOverlay();currentView='simple-waiting';app.innerHTML=`<main class="portal-shell">${simpleHeader()}<section class="simple-waiting card card-pad"><span class="pill blue">真人面试候场</span><h1>${examiner()?'等待应聘者确认':'等待面试官确认'}</h1><p>${esc(SIMPLE.profile.name)} · ${esc(SIMPLE.profile.job)}</p><p id="simple-wait-status" role="status">双方确认后自动连接，无需邀请链接。</p><video id="simple-device-preview" autoplay playsinline muted></video><p class="tiny dim">仅预览自己的设备；视频通话未连接前不发送到对方。</p><button class="btn btn-ghost" data-action="simple-cancel">取消并返回</button></section></main>`;const video=$('#simple-device-preview');if(video&&HUMAN.previewStream)video.srcObject=HUMAN.previewStream;scheduleSimplePoll(true);}
 async function simplePreview(){resetHumanState();try{HUMAN.previewStream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});}catch{try{HUMAN.previewStream=await navigator.mediaDevices.getUserMedia({video:false,audio:true});}catch{throw Error('请允许麦克风权限后再确认；摄像头可在通话中开启');}}}
 async function simpleConfirmLive(){if(SIMPLE.busy)return;SIMPLE.busy=true;try{stopSimplePoll();await simplePreview();const d=await simpleAPI(examiner()?'create':'confirm',{language:SIMPLE.language});SIMPLE.task=d;SIMPLE.intent=true;simpleSessionSave();simpleWaiting();if(d.phase==='ready')await enterSimpleRoom(d);}catch(e){HUMAN.previewStream?.getTracks().forEach(t=>t.stop());SIMPLE.error=e.message;if($('#simple-start-error'))$('#simple-start-error').textContent=e.message;else showToast(e.message,'warn');}finally{SIMPLE.busy=false;}}
-async function pollSimple(waiting){if(!SIMPLE.auth||SIMPLE.activeAI)return;const serial=SIMPLE.serial,profileId=SIMPLE.profile?.id;try{const d=await simpleAPI('status');if(!SIMPLE.auth||serial!==SIMPLE.serial||profileId!==SIMPLE.profile?.id)return;const status=$('#simple-live-status');if(status)status.textContent=d.phase==='none'?'尚无面试官发起；你可以先确认候场。':d.phase==='ended'?'上一场面试已结束，可等待下一场。':d.phase==='expired'?'上一场安排已过期，可重新确认候场。':d.phase==='ready'?'双方已确认，点击加入即可。':'面试官已确认，等待你加入。';const ai=$('#simple-ai-status');if(ai)ai.textContent=d.aiCompletion?'已完成 '+d.aiCompletion.answered+' 个核心问题 · '+new Date(d.aiCompletion.completedAt).toLocaleString()+'；评价由面试官查看。':'尚未完成 AI 面试。';if(SIMPLE.intent){if(d.phase==='ready'&&!RTC_SESSION.connected&&!SIMPLE.joining){SIMPLE.task=d;await enterSimpleRoom(d);}else if(['ended','expired'].includes(d.phase)&&SIMPLE.task?.taskId===d.taskId){SIMPLE.intent=false;await rtcLeave();HUMAN.previewStream?.getTracks().forEach(t=>t.stop());renderShell();showToast('本场面试已结束');}else if($('#simple-wait-status'))$('#simple-wait-status').textContent=d.phase==='none'?'等待面试官安排，页面会自动更新。':'已确认，等待另一方；无需重新点击。';}}catch(e){const el=$('#simple-wait-status')||$('#simple-live-status');if(el)el.textContent='暂未同步：'+e.message;}finally{if(serial===SIMPLE.serial&&SIMPLE.auth&&!SIMPLE.activeAI&&(currentView==='simple-waiting'||currentView==='human-room'||!examiner()&&currentView==='candidate-interviews'))scheduleSimplePoll(waiting);}}
+async function pollSimple(waiting){if(!SIMPLE.auth||SIMPLE.activeAI)return;const serial=SIMPLE.serial,profileId=SIMPLE.profile?.id;try{const d=await simpleAPI('status');if(currentView==='human-room'&&d.taskId===SIMPLE.task?.taskId&&d.roomTicket)RTC_SESSION.ticket=d.roomTicket;if(!SIMPLE.auth||serial!==SIMPLE.serial||profileId!==SIMPLE.profile?.id)return;const status=$('#simple-live-status');if(status)status.textContent=d.phase==='none'?'尚无面试官发起；你可以先确认候场。':d.phase==='ended'?'上一场面试已结束，可等待下一场。':d.phase==='expired'?'上一场安排已过期，可重新确认候场。':d.phase==='ready'?'双方已确认，点击加入即可。':'面试官已确认，等待你加入。';const ai=$('#simple-ai-status');if(ai)ai.textContent=d.aiCompletion?'已完成 '+d.aiCompletion.answered+' 个核心问题 · '+new Date(d.aiCompletion.completedAt).toLocaleString()+'；评价由面试官查看。':'尚未完成 AI 面试。';if(SIMPLE.intent){if(d.phase==='ready'&&!RTC_SESSION.connected&&!SIMPLE.joining){SIMPLE.task=d;await enterSimpleRoom(d);}else if(['ended','expired'].includes(d.phase)&&SIMPLE.task?.taskId===d.taskId){SIMPLE.intent=false;await rtcLeave();HUMAN.previewStream?.getTracks().forEach(t=>t.stop());renderShell();showToast('本场面试已结束');}else if($('#simple-wait-status'))$('#simple-wait-status').textContent=d.phase==='none'?'等待面试官安排，页面会自动更新。':'已确认，等待另一方；无需重新点击。';}}catch(e){const el=$('#simple-wait-status')||$('#simple-live-status');if(el)el.textContent='暂未同步：'+e.message;}finally{if(serial===SIMPLE.serial&&SIMPLE.auth&&!SIMPLE.activeAI&&(currentView==='simple-waiting'||currentView==='human-room'||!examiner()&&currentView==='candidate-interviews'))scheduleSimplePoll(waiting);}}
 function scheduleSimplePoll(waiting){stopSimplePoll();SIMPLE.poll=setTimeout(()=>pollSimple(waiting),waiting?2500:5000);}
 async function enterSimpleRoom(d){if(SIMPLE.joining||RTC_SESSION.connected)return;SIMPLE.joining=true;try{stopSimplePoll();RTC_SESSION.ticket=d.roomTicket;RTC_SESSION.role=examiner()?'interviewer':'candidate';RTC_SESSION.roomId='hw_'+d.taskId;interviewLanguages.human={...d.languages};if(examiner()){ANALYSIS.current={sessionId:d.taskId,analysisTicket:d.analysisTicket};ANALYSIS.mode='human';newGuide('human');}await rtcJoin(!!HUMAN.previewStream?.getVideoTracks().length);if(RTC_SESSION.connected)scheduleSimplePoll(true);else{SIMPLE.intent=false;showToast('连接未完成，请返回工作台重试','warn');}}finally{SIMPLE.joining=false;}}
 analysisSession=async function(mode){if(ANALYSIS.current&&ANALYSIS.mode===mode)return ANALYSIS.current;throw Error('请先在自己的工作台确认开始本场面试');};
 async function simpleStartAI(){if(SIMPLE.busy)return;SIMPLE.busy=true;try{stopSimplePoll();const d=await simpleAPI('ai-start',{language:SIMPLE.language});SIMPLE.activeAI=true;ANALYSIS.current={sessionId:d.sessionId,analysisTicket:d.analysisTicket};ANALYSIS.mode='ai';ANALYSIS.invited=true;ANALYSIS.receipt=null;interviewLanguages.ai={interviewer:SIMPLE.language,candidate:SIMPLE.language};hydrateSimpleProfile(d.candidate);AI_CURRENT_CANDIDATE=d.candidate.id;aiCandidate().language=SIMPLE.language;deepseekOriginalAI({candidateId:d.candidate.id});await aiStart();}catch(e){showToast('未开始：'+e.message,'warn');}finally{SIMPLE.busy=false;}}
 startAISession=function(){if(examiner()){showToast('面试官端只进行真人面试');return;}simpleStartAI();};
 const simpleBar=interviewLanguageBar;
-interviewLanguageBar=function(mode){if(mode==='ai'){const l=INTERVIEW_LANGS.find(l=>l.id===(ANALYSIS.current?interviewLanguages.ai.candidate:SIMPLE.language));return `<div class="interview-language-bar simple-ai-language"><b>面试语言：${esc(l?.name||'中文')}</b><span class="tiny dim">AI 面试官与你使用同一种语言，不做翻译；返回工作台可以重新选择语言。</span></div>`;}return `<div class="interview-language-bar"><span>面试官：${esc(interviewLang('human','interviewer').name)}</span><span>应聘者：${esc(interviewLang('human','candidate').name)}</span><p class="language-note">双方各自确认自己的语言；当前仍为原声通话，译音未自动开启。</p></div>`;};
+interviewLanguageBar=function(mode){if(mode==='ai'){const l=INTERVIEW_LANGS.find(l=>l.id===(ANALYSIS.current?interviewLanguages.ai.candidate:SIMPLE.language));return `<div class="interview-language-bar simple-ai-language"><b>面试语言：${esc(l?.name||'中文')}</b><span class="tiny dim">AI 面试官与你使用同一种语言，不做翻译；返回工作台可以重新选择语言。</span></div>`;}return `<div class="interview-language-bar"><span>面试官：${esc(interviewLang('human','interviewer').name)}</span><span>应聘者：${esc(interviewLang('human','candidate').name)}</span><p class="language-note">双方使用所选语言发言；跨语言时播放译音，并显示原文与译文。</p></div>`;};
 aiFinish=function(){if(!ANALYSIS.receipt){showToast('回答尚未成功保存，请重试','warn');return;}AI.finished=true;stopAITimer();cancelSpeech();meetStopListening();MEET.stream?.getTracks().forEach(t=>t.stop());SIMPLE.activeAI=false;app.innerHTML=`<main class="portal-shell">${simpleHeader()}<section class="completion-card card card-pad"><span class="pill teal">已完成</span><h1>谢谢你的认真作答</h1><p>本场回答已保存到共享任务记录，无需下载或发送文件。面试官可在后续面试中查看。</p><p class="tiny dim">内部评价不在应聘者页面显示。</p><button class="btn btn-primary" data-action="simple-home">返回我的面试</button></section></main>`;};
 const simpleLeave=humanEndConfirm;
 humanEndConfirm=async function(){SIMPLE.intent=false;stopSimplePoll();if(SIMPLE.task?.taskId){try{await simpleAPI('end',{taskId:SIMPLE.task.taskId});}catch{showToast('云端结束状态未同步，正在退出本机通话','warn');}}await simpleLeave();SIMPLE.task=null;renderShell();};
@@ -6198,8 +6233,24 @@ aiFinish=function(){if(!ANALYSIS.receipt){showToast('回答尚未成功保存，
 async function flowResults(tab){if(!examiner()){renderShell();return;}FLOW.serial++;stopSimplePoll();FLOW.tab=tab||(examiner()?'formal':'practice');FLOW.result=null;currentView='flow-results';app.innerHTML=`<main class="portal-shell">${simpleHeader()}<div class="portal-content"><div class="page-head"><div><div class="eyebrow">INTERVIEW RESULTS</div><h1>${examiner()?'面试结果':'我的面试结果'}</h1><p class="dim">${examiner()?'每位应聘者按面试类型仅展示最新一次已完成的面试；不包含私人练习。':'练习反馈仅本人可见；正式反馈由招聘方发布。'}</p></div><button class="btn btn-ghost" data-action="simple-home">返回工作台</button></div><nav class="flow-tabs" aria-label="面试结果分类">${(examiner()?['formal','live']:['practice','formal','live']).map(k=>`<button class="btn ${FLOW.tab===k?'btn-primary':'btn-ghost'}" data-action="flow-tab" data-kind="${k}" aria-pressed="${FLOW.tab===k}">${k==='formal'?'AI 面试结果':k==='live'?'真人面试结果':'AI 练习反馈'}</button>`).join('')}</nav><div id="flow-results-list" class="simple-candidate-grid" role="status">正在读取已保存的场次…</div></div></main>`;const serial=FLOW.serial;try{const d=await simpleAPI('results');if(serial!==FLOW.serial)return;FLOW.rows=d.results;flowResultCards();}catch(e){if(serial===FLOW.serial)$('#flow-results-list').textContent='未能读取：'+e.message;}}
 function flowResultCards(){const latest=new Map();for(const r of FLOW.rows.filter(r=>r.kind===FLOW.tab)){const key=r.candidateId,old=latest.get(key);if(!old||new Date(r.completedAt)>new Date(old.completedAt))latest.set(key,r);}const rows=[...latest.values()].sort((a,b)=>new Date(b.completedAt)-new Date(a.completedAt));$('#flow-results-list').innerHTML=rows.length?rows.map(r=>`<button class="simple-person-card" data-action="flow-report" data-id="${r.id}" data-candidate="${r.candidateId}"><span class="pill ${r.kind==='practice'?'teal':'blue'}">${flowKind(r.kind)}</span><h2>${esc(r.name)}</h2><p>${esc(r.job)}</p><small>${new Date(r.completedAt).toLocaleString()}<br>面试语言：${esc(flowLanguage(r.language))}</small><span class="simple-person-cta">${r.kind==='practice'?'仅本人可见':r.published?'已发布反馈':'招聘方内部评价'} · 查看可视化报告 →</span></button>`).join(''):'<section class="card card-pad"><h3>暂无可查看的结果</h3><p class="dim">完成对应面试后在此显示；正式反馈需由招聘方发布。</p></section>';}
 const FLOW_COPY={zh:['面试报告','总体表现','信息不足','逐题表现','优势','待核实','改进建议','问答依据','原始问答与引文','追问','仅根据回答文字辅助评价；不评价发音，不替代录用判断。'],en:['Interview report','Overall performance','Insufficient evidence','Performance by question','Strengths','Points to verify','Suggestions','Answer evidence','Original answers and quotes','Follow-up','Based on answer text only. No pronunciation assessment or hiring decision.'],th:['รายงานการสัมภาษณ์','ภาพรวม','หลักฐานไม่เพียงพอ','ผลรายคำถาม','จุดแข็ง','ประเด็นที่ต้องตรวจสอบ','คำแนะนำ','หลักฐานคำตอบ','คำตอบและคำอ้างอิงต้นฉบับ','คำถามต่อเนื่อง','ประเมินจากข้อความเท่านั้น ไม่ประเมินการออกเสียงหรือใช้ตัดสินการจ้างงาน'],fr:['Rapport d’entretien','Résultat global','Éléments insuffisants','Résultats par question','Points forts','Points à vérifier','Conseils','Éléments de réponse','Réponses et citations originales','Relance','Évaluation du texte uniquement, sans évaluer la prononciation ni décider du recrutement.'],es:['Informe de entrevista','Resultado general','Evidencia insuficiente','Resultados por pregunta','Fortalezas','Puntos por verificar','Sugerencias','Evidencias','Respuestas y citas originales','Pregunta de seguimiento','Evaluación del texto; no evalúa pronunciación ni decide la contratación.'],ja:['面接レポート','総合評価','根拠不足','質問別の評価','強み','確認が必要な点','改善のヒント','回答の根拠','元の回答と引用','追加質問','回答の文章に基づく参考評価です。発音評価や採用判断は行いません。'],vi:['Báo cáo phỏng vấn','Đánh giá tổng thể','Chưa đủ bằng chứng','Kết quả từng câu hỏi','Điểm mạnh','Điểm cần xác minh','Gợi ý cải thiện','Bằng chứng trả lời','Câu trả lời và trích dẫn gốc','Câu hỏi tiếp nối','Chỉ đánh giá nội dung văn bản, không đánh giá phát âm hay quyết định tuyển dụng.']};
-function flowReportFrame(r){FLOW.result=r;FLOW.language=examiner()?SIMPLE.language:r.language;currentView='flow-report';FLOW.serial++;stopSimplePoll();app.innerHTML=`<main class="portal-shell">${simpleHeader()}<div class="portal-content"><div class="page-head"><div><span class="pill teal">${flowKind(r.kind)}</span><h1>${esc(r.name)} · ${esc(r.job)}</h1><p class="dim">${new Date(r.completedAt).toLocaleString()} · 面试语言 ${esc(flowLanguage(r.language))}</p></div><button class="btn btn-ghost" data-action="${examiner()?'flow-back-results':'simple-home'}">${examiner()?'返回结果列表':'返回工作台'}</button></div><div class="flow-actions">${r.kind!=='practice'?INTERVIEW_LANGS.map(l=>`<button class="language-button" data-action="flow-report-language" data-language="${l.id}">${l.name}</button>`).join(''):`<span class="pill teal">反馈语言：${esc(flowLanguage(r.language))} · 仅本人可见</span>`}${examiner()?`<button id="flow-publish" class="btn btn-blue" data-action="flow-publish">${r.published?'撤回公开反馈':'向应聘者发布反馈'}</button>`:''}</div><div id="flow-report-body" aria-live="polite"></div></div></main>`;flowLoadReport();}
-async function flowLoadReport(){const r=FLOW.result,language=FLOW.language,serial=++FLOW.serial,body=$('#flow-report-body');body.innerHTML='<section class="card card-pad">正在生成或读取已保存的报告，请稍候…</section>';$('[data-action="flow-publish"]')?.removeAttribute('disabled');$$('[data-action="flow-report-language"]').forEach(b=>{b.classList.toggle('selected',b.dataset.language===language);b.setAttribute('aria-pressed',String(b.dataset.language===language));});try{const d=await simpleAPI('report',{candidateId:r.candidateId,resultId:r.id,language});if(serial!==FLOW.serial||!body.isConnected)return;const v=d.review,t=FLOW_COPY[language],items=v.items;const list=(title,values)=>`<section class="card card-pad"><h3>${title}</h3>${values.length?`<ul>${values.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:`<p class="dim">${t[2]}</p>`}</section>`;body.innerHTML=`<section class="flow-overview card card-pad"><div class="flow-score" style="--score:${v.overall??0}"><b>${v.overall??'—'}</b><small>/ 100</small></div><div><span class="pill teal">DeepSeek · ${t[0]}</span><h2>${t[1]}</h2><p>${esc(v.summary)}</p></div></section><section class="card card-pad"><h3>${t[3]}</h3><div class="flow-bars">${items.map((x,i)=>`<div><span>Q${i+1}</span><div class="flow-track" role="img" aria-label="Q${i+1}: ${x.score??t[2]}"><span style="width:${x.score??0}%"></span></div><b>${x.score===null?t[2]:x.score+' / 100'}</b></div>`).join('')}</div></section><div class="flow-insights">${list(t[4],v.strengths)}${list(t[5],v.risks)}${list(t[6],v.suggest)}</div><section class="card card-pad"><h3>${t[7]}</h3>${items.map((x,i)=>`<article class="flow-evidence"><h4>Q${i+1} · ${esc(x.displayQuestion||x.question)}</h4><p>${esc(x.comment)}</p><p>${esc(x.displayAnswer||x.answer)}</p>${x.followUp?`<p><b>${t[9]}</b> ${esc(x.displayFollowUpQuestion||x.followUp.question)}</p><p>${esc(x.displayFollowUpAnswer||x.followUp.text)}</p>`:''}<details><summary>${t[8]}</summary><p>${esc(x.question)}</p><p>${esc(x.answer)}</p>${x.followUp?`<p>${esc(x.followUp.question)}</p><p>${esc(x.followUp.text)}</p>`:''}${x.evidence.map(q=>`<blockquote>${esc(q)}</blockquote>`).join('')}</details></article>`).join('')}<p class="tiny dim">${t[10]}</p></section>${!examiner()&&r.kind==='practice'?'<button class="btn btn-primary" data-action="flow-practice-again">再练一次</button>':''}`;}catch(e){if(serial===FLOW.serial&&body.isConnected)body.innerHTML=`<section class="card card-pad"><p>${esc(e.message)}</p><button class="btn btn-primary" data-action="flow-report-retry">重试读取报告</button></section>`;}}
+function flowReportFrame(r){FLOW.result=r;FLOW.language=examiner()?'zh':r.language;currentView='flow-report';FLOW.serial++;stopSimplePoll();app.innerHTML=`<main class="portal-shell">${simpleHeader()}<div class="portal-content"><div class="page-head"><div><span class="pill teal">${flowKind(r.kind)}</span><h1>${esc(r.name)} · ${esc(r.job)}</h1><p class="dim">${new Date(r.completedAt).toLocaleString()} · 面试语言 ${esc(flowLanguage(r.language))}</p></div><button class="btn btn-ghost" data-action="${examiner()?'flow-back-results':'simple-home'}">${examiner()?'返回结果列表':'返回工作台'}</button></div><div class="flow-actions">${[...new Set(['zh',r.language])].map(id=>`<button class="language-button" data-action="flow-report-language" data-language="${id}">${id==='zh'?'中文':esc(flowLanguage(id))}</button>`).join('')}${examiner()?`<button id="flow-publish" class="btn btn-blue" data-action="flow-publish">${r.published?'撤回公开反馈':'向应聘者发布反馈'}</button>`:''}</div><div id="flow-report-body" aria-live="polite"></div></div></main>`;flowLoadReport();}
+
+function flowPerformanceCharts(items,t){
+ const colors=['#46e3bf','#73b5ff','#c19bff','#ffcc75','#ff91ad'];
+ const scored=x=>typeof x.score==='number'&&Number.isFinite(x.score);
+ const value=x=>scored(x)?Math.max(0,Math.min(100,x.score)):0;
+ const point=(i,n)=>{
+  const angle=2*Math.PI*i/items.length-Math.PI/2;
+  return [180+Math.cos(angle)*n*1.15,180+Math.sin(angle)*n*1.15];
+ };
+ const points=n=>items.map((x,i)=>point(i,n).join(',')).join(' ');
+ const radar=items.length>=3&&items.every(scored)?`<svg viewBox="0 0 360 360" role="img" aria-label="${esc(t[3])}">
+ ${[25,50,75,100].map(n=>`<polygon points="${points(n)}" fill="none" stroke="#365369"/>`).join('')}
+ <polygon points="${items.map((x,i)=>point(i,value(x)).join(',')).join(' ')}" fill="#46e3bf33" stroke="#46e3bf" stroke-width="3"/>
+ ${items.map((x,i)=>{const [a,b]=point(i,value(x)),[c,d]=point(i,130);return `<circle cx="${a}" cy="${b}" r="6" fill="${colors[i%colors.length]}"/><text x="${c}" y="${d}" text-anchor="middle" dominant-baseline="middle" fill="${colors[i%colors.length]}">Q${i+1}</text>`;}).join('')}</svg>`:'';
+ return `<section class="card card-pad"><h3>${t[3]}</h3><div class="flow-chart-grid ${radar?'':'bars-only'}">${radar}<div class="flow-bars">${items.map((x,i)=>`<div style="--bar-color:${colors[i%colors.length]}"><b>Q${i+1}</b><div class="flow-track" role="img" aria-label="Q${i+1}: ${scored(x)?value(x):esc(t[2])}"><span style="width:${value(x)}%"></span></div><strong>${scored(x)?value(x)+' / 100':esc(t[2])}</strong></div>`).join('')}</div></div></section>`;
+}
+async function flowLoadReport(){const r=FLOW.result,language=FLOW.language,serial=++FLOW.serial,body=$('#flow-report-body');body.innerHTML='<section class="card card-pad">正在生成或读取已保存的报告，请稍候…</section>';$('[data-action="flow-publish"]')?.removeAttribute('disabled');$$('[data-action="flow-report-language"]').forEach(b=>{b.classList.toggle('selected',b.dataset.language===language);b.setAttribute('aria-pressed',String(b.dataset.language===language));});try{const d=await simpleAPI('report',{candidateId:r.candidateId,resultId:r.id,language});if(serial!==FLOW.serial||!body.isConnected)return;const v=d.review,t=FLOW_COPY[language]||FLOW_COPY.zh,items=v.items;const list=(title,values)=>`<section class="card card-pad"><h3>${title}</h3>${values.length?`<ul>${values.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:`<p class="dim">${t[2]}</p>`}</section>`;body.innerHTML=`<section class="flow-overview card card-pad"><div class="flow-score" style="--score:${v.overall??0}"><b>${v.overall??'—'}</b><small>/ 100</small></div><div><span class="pill teal">DeepSeek · ${t[0]}</span><h2>${t[1]}</h2><p>${esc(v.summary)}</p></div></section>${flowPerformanceCharts(items,t)}<div class="flow-insights">${list(t[4],v.strengths)}${list(t[5],v.risks)}${list(t[6],v.suggest)}</div><section class="card card-pad"><h3>${t[7]}</h3>${items.map((x,i)=>`<details class="flow-evidence"><summary>Q${i+1} · ${esc(x.displayQuestion||x.question)} <b>${x.score===null?t[2]:x.score+" / 100"}</b></summary><p>${esc(x.comment)}</p><p>${esc(x.displayAnswer||x.answer)}</p>${x.followUp?`<p><b>${t[9]}</b> ${esc(x.displayFollowUpQuestion||x.followUp.question)}</p><p>${esc(x.displayFollowUpAnswer||x.followUp.text)}</p>`:''}<details><summary>${t[8]}</summary><p>${esc(x.question)}</p><p>${esc(x.answer)}</p>${x.followUp?`<p>${esc(x.followUp.question)}</p><p>${esc(x.followUp.text)}</p>`:''}${x.evidence.map(q=>`<blockquote>${esc(q)}</blockquote>`).join('')}</details></details>`).join('')}<p class="tiny dim">${t[10]}</p></section>${!examiner()&&r.kind==='practice'?'<button class="btn btn-primary" data-action="flow-practice-again">再练一次</button>':''}`;}catch(e){if(serial===FLOW.serial&&body.isConnected)body.innerHTML=`<section class="card card-pad"><p>${esc(e.message)}</p><button class="btn btn-primary" data-action="flow-report-retry">重试读取报告</button></section>`;}}
 async function flowPublish(){if(FLOW.busy)return;FLOW.busy=true;try{const r=FLOW.result,d=await simpleAPI('publish',{candidateId:r.candidateId,resultId:r.id,published:!r.published});r.published=d.published;$('#flow-publish').textContent=d.published?'撤回公开反馈':'向应聘者发布反馈';showToast(d.published?'已发布，应聘者可查看这份反馈':'已撤回，应聘者不再能读取反馈');}catch(e){showToast(e.message,'warn');}finally{FLOW.busy=false;}}
 function flowLiveTranscript(){return (HUMAN.transcript||[]).filter(r=>!r.live&&r.src).map(r=>(r.who==='candidate'||r.role==='candidate'?'应聘者':'面试官')+'：'+r.src).join('\n')||Array.from(LIVE_ANALYSIS.answers.values()).map(t=>'应聘者：'+t).join('\n');}
 function flowLiveDialog(){openOverlay(`<div class="modal-mask"><section class="modal-card dossier-modal"><div class="modal-head"><h3>保存真人面试记录</h3><button class="icon-btn" data-action="close-modal">${icon('x')}</button></div><div class="dossier-body"><p>请核对实际问答记录。没有转录时，可粘贴真实记录；不要使用模拟回答。首次保存后作为本场评价依据归档。</p><textarea id="flow-live-text" rows="12" style="width:100%" placeholder="面试官：实际问题…&#10;应聘者：实际回答…">${esc(flowLiveTranscript())}</textarea><p id="flow-live-error" role="status"></p></div><div class="modal-foot"><button class="btn btn-primary" data-action="flow-save-live">核对并保存记录</button></div></section></div>`);}
@@ -6207,7 +6258,7 @@ async function flowSaveLive(){if(FLOW.busy)return;FLOW.busy=true;try{await simpl
 evaluateLiveAnswers=async function(){flowLiveDialog();};
 const flowRtcJoin=rtcJoin;rtcJoin=async function(video){await flowRtcJoin(video);$('#simple-practice-record')?.remove();if(examiner()&&RTC_SESSION.connected)$('.rtc-call-actions')?.insertAdjacentHTML('beforeend','<button class="btn btn-ghost btn-sm" data-action="flow-live-dialog">保存面试记录</button>');};
 const flowRtcLeave=rtcLeave;
-rtcLeave=async function(){if(examiner()&&RTC_SESSION.connected&&SIMPLE.task?.taskId&&flowLiveTranscript().length>=10){try{await simpleAPI('review-live',{taskId:SIMPLE.task.taskId,transcript:flowLiveTranscript()});}catch(e){showToast('真人面试记录未归档：'+e.message,'warn');}}return flowRtcLeave();};
+rtcLeave=async function(reconnecting=false){if(!reconnecting&&examiner()&&RTC_SESSION.connected&&SIMPLE.task?.taskId&&flowLiveTranscript().length>=10){try{await simpleAPI('review-live',{taskId:SIMPLE.task.taskId,transcript:flowLiveTranscript()});}catch(e){showToast('真人面试记录未归档：'+e.message,'warn');}}return flowRtcLeave(reconnecting);};
 const flowEnd=humanEndConfirm;humanEndConfirm=async function(){if(examiner()&&SIMPLE.task?.taskId&&flowLiveTranscript().length>=10){try{await simpleAPI('review-live',{taskId:SIMPLE.task.taskId,transcript:flowLiveTranscript()});}catch(e){showToast('记录未归档：'+e.message+'。请保留页面并重试结束。','warn');return;}}return flowEnd();};
 document.addEventListener('click',async e=>{const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action;if(!a.startsWith('flow-'))return;e.stopImmediatePropagation();try{switch(a){case 'flow-assign-dialog':flowAssignmentDialog();break;case 'flow-plan':await flowPlan();break;case 'flow-assign':await flowAssign();break;case 'flow-formal-confirm':flowConfirmFormal(b.dataset.id);break;case 'flow-formal-start':closeOverlay();await simpleStartAI('formal',b.dataset.id);break;case 'flow-results':await flowResults();break;case 'flow-tab':await flowResults(b.dataset.kind);break;case 'flow-report':{const r=FLOW.rows.find(r=>r.id===b.dataset.id&&r.candidateId===b.dataset.candidate);if(r)flowReportFrame(r);break;}case 'flow-back-results':await flowResults(FLOW.result?.kind);break;case 'flow-report-language':FLOW.language=b.dataset.language;await flowLoadReport();break;case 'flow-report-retry':await flowLoadReport();break;case 'flow-publish':await flowPublish();break;case 'flow-own-latest':{const d=await simpleAPI('results');const r=d.results.find(x=>x.kind==='practice'&&x.id===ANALYSIS.receipt?.sessionId);if(r)flowReportFrame(r);}break;case 'flow-practice-again':await simpleStartAI('practice');break;case 'flow-live-dialog':flowLiveDialog();break;case 'flow-save-live':await flowSaveLive();break;}}catch(err){showToast(err.message,'warn');}},true);
 
@@ -6399,8 +6450,182 @@ window.__LANQIAO__ = {
   startAI: startAISession, startHuman: openHumanLobby, report: showReport, setStage, loginAs
 };
 
+/* Two-way live captions and queued cloud translation audio. */
+let LIVE_INTERPRETATION = null;
+function liveInterpretationNotice(state,text) {
+ if (LIVE_INTERPRETATION !== state) return;
+ const el = document.getElementById('live-interpretation-state');
+ if (el) el.textContent = text;
+}
+function liveInterpretationMount() {
+ const panel = document.querySelector('#hu-transcript');
+ if (!panel) return;
+ panel.innerHTML = '<p class="dim">等待双方发言，原文与译文将在此实时显示。</p>';
+ document.querySelector('#hu-screen .iv-panel-title').textContent = '实时对话 · 原文与译文';
+ const controls = document.querySelector('#hu-screen .rtc-call-actions');
+ if (controls) controls.innerHTML = '<span id="live-interpretation-state" role="status">正在连接同传…</span><button class="btn btn-ghost btn-sm" data-action="live-original">收听原声</button><button class="btn btn-ghost btn-sm" data-action="live-audio-resume" hidden>播放译音</button><button class="btn btn-ghost btn-sm" data-action="live-retry">检查同传</button>';
+ const local=document.getElementById('hu-stage-label');if(local)local.textContent='我的发言';
+ const remote=document.querySelector('#hu-screen .meet-pane:nth-child(2) .meet-caption .label');if(remote)remote.textContent='对方发言';
+ if(RTC_SESSION.role==='candidate'){
+  const context=document.querySelector('#hu-screen .iv-context');
+  if(context)context.innerHTML=`<span class="avatar">${esc(aiCandidate().initial||'我')}</span><div><div class="t">${esc(aiCandidate().name)} · 应聘者</div><div class="s">${esc(aiCandidate().job)}</div></div>`;
+ }
+}
+function liveInterpretationRender(state) {
+ const panel = document.getElementById('hu-transcript');
+ if (!panel || LIVE_INTERPRETATION !== state) return;
+ const bottom = panel.scrollHeight-panel.scrollTop-panel.clientHeight < 80;
+ const rows = [...state.rows.values()];
+ panel.innerHTML = rows.slice(-150).map(row => `<article class="live-caption ${row.source}"><header>${row.source==='interviewer'?'面试官':'应聘者'} · ${esc(flowLanguage(row.language))}</header><p>${esc(row.text)}</p>${row.translation?`<p class="live-translation">${esc(row.translation)}</p>`:''}</article>`).join('');
+ if (bottom) panel.scrollTop = panel.scrollHeight;
+ // Only finalized original speech enters the existing evaluation workflow.
+ HUMAN.transcript = rows.filter(row=>row.text && row.originalFinal).map((row,i)=>({id:'live-'+i,who:row.source,src:row.text,tr:row.translation,live:false,source:'trtc'}));
+ const row = rows.at(-1);
+ if (row) {
+  const prefix = row.source===state.role?'hu-stage':'hu-sub';
+  const src=document.getElementById(prefix+'-src'),tr=document.getElementById(prefix+'-tr');
+  if(src)src.textContent=row.text;if(tr)tr.textContent=row.translation;
+ }
+}
+function liveInterpretationMessage(state,event) {
+ if (LIVE_INTERPRETATION!==state || state.closed || event.cmdId!==1) return;
+ if (!state.tasks.length) { if(state.pending.length<80)state.pending.push(event); return; }
+ let message;
+ try { message=JSON.parse(new TextDecoder().decode(event.data)); } catch { return; }
+ const p=message.payload;
+ if(message.type!==10000 || !p || typeof p.roundid!=='string' || p.roundid.length>200)return;
+ const task=state.tasks.find(t=>t.botUserId===event.userId && (!p.taskid || t.taskId===p.taskid));
+ if(!task || ![task.sourceUserId,task.botUserId].includes(message.sender))return;
+ const translated=typeof p.translation_text==='string';
+ if(translated && p.translation_language!==task.targetLanguage)return;
+ const text=translated?p.translation_text:p.text;
+ if(typeof text!=='string'||text.length>12000)return;
+ const key=task.taskId+':'+p.roundid;
+ let row=state.rows.get(key);
+ if(!row){row={source:task.source,language:task.sourceLanguage,text:'',translation:'',originalFinal:false,translationFinal:false,spoken:false,sequence:{}};state.rows.set(key,row);}
+ const field=translated?'translation':'text',finalField=translated?'translationFinal':'originalFinal';
+ if(row[finalField])return;
+ if(Number.isFinite(event.seq) && Number.isFinite(row.sequence[field]) && event.seq<row.sequence[field])return;
+ row.sequence[field]=event.seq;row[field]=text;row[finalField]=p.end===true;
+ liveInterpretationRender(state);
+ if(!translated && row.originalFinal && task.source==='candidate' && state.role==='interviewer'){
+  LIVE_ANALYSIS.answers.set(key,text);
+  const guide=guideSessions.human;
+  if(guide&&!guide.followup){
+   clearTimeout(LIVE_ANALYSIS.firstTimer);
+   LIVE_ANALYSIS.firstTimer=setTimeout(()=>{
+    if(!state.closed&&LIVE_INTERPRETATION===state&&!guide.followup)createFollowUp('human',Array.from(LIVE_ANALYSIS.answers.values()).join('\n'));
+   },3000);
+  }
+ }
+ if(translated && row.translationFinal && !row.spoken && task.source!==state.role && !state.original){
+  row.spoken=true;
+   if(state.queue.length>=12){state.audioError='译音积压，本句仅显示字幕，请稍停片刻';liveInterpretationNotice(state,state.audioError);return;}
+  // Keep sentence ordering and API size limits for unusually long utterances.
+  const characters=Array.from(text);
+  while(characters.length)state.queue.push(characters.splice(0,1500).join(''));
+  void liveInterpretationSpeak(state);
+ }
+}
+async function liveInterpretationSpeak(state) {
+ if(state.speaking || state.closed || state.original || LIVE_INTERPRETATION!==state)return;
+ state.speaking=true;
+ try {
+  while(state.queue.length && !state.closed && !state.original && LIVE_INTERPRETATION===state){
+   const text=state.queue.shift(),epoch=state.audioEpoch;
+   const result=await rtcRequest('interpretation/speech',{roomTicket:RTC_SESSION.ticket,text});
+   if(state.closed || state.original || epoch!==state.audioEpoch || LIVE_INTERPRETATION!==state)break;
+   if(result.language!==state.language || result.mime!=='audio/mpeg')throw Error('译音语言或格式不匹配');
+   state.audioError='';
+   const bytes=Uint8Array.from(atob(result.audio),c=>c.charCodeAt(0));
+   const url=URL.createObjectURL(new Blob([bytes],{type:'audio/mpeg'}));
+   try {
+    const player=new Audio(url);state.player=player;
+    await new Promise((resolve,reject)=>{
+     state.finishAudio=resolve;player.onended=resolve;player.onerror=()=>reject(Error('译音播放失败，请检查网络'));
+     player.play().catch(()=>{if(state.closed){resolve();return;}state.audioError='请点击「播放译音」启用声音';const button=document.querySelector('[data-action="live-audio-resume"]');if(button)button.hidden=false;liveInterpretationNotice(state,state.audioError);});
+    });
+   } finally { URL.revokeObjectURL(url);state.player=null;state.finishAudio=null; }
+  }
+ } catch(e) {state.audioError='译音暂不可用：'+e.message+'。可点击收听原声';liveInterpretationNotice(state,state.audioError);}
+ finally {state.speaking=false;if(state.queue.length&&!state.audioError&&!state.closed&&!state.original)void liveInterpretationSpeak(state);}
+}
+function liveInterpretationClearAudio(state) {
+ state.audioEpoch++;state.queue=[];state.player?.pause();state.finishAudio?.();
+ const button=document.querySelector('[data-action="live-audio-resume"]');if(button)button.hidden=true;
+}
+async function liveInterpretationPoll(state,start=false) {
+ if(state.closed || LIVE_INTERPRETATION!==state || state.polling)return;
+ state.polling=true;
+ try {
+  const result=await rtcRequest('interpretation/'+(start?'start':'status'),{roomTicket:RTC_SESSION.ticket});
+  if(state.closed || LIVE_INTERPRETATION!==state)return;
+  if(result.closed){state.closed=true;liveInterpretationClearAudio(state);liveInterpretationNotice(state,'本场同传已结束');return;}
+  state.tasks=result.tasks||[];
+  for(const event of state.pending.splice(0))liveInterpretationMessage(state,event);
+  const failed=state.tasks.find(t=>t.state==='failed');
+  liveInterpretationNotice(state,failed?'同传未就绪：'+failed.error:state.audioError|| (result.ready?(state.same?'原声通话 · 实时字幕已连接':state.original?'正在收听原声 · 双语字幕已连接':'双向字幕已连接 · 译音按短句播放'):'正在等待双方语音转录就绪…'));
+ } catch(e){liveInterpretationNotice(state,'同传未就绪：'+e.message+'。可点击收听原声');}
+ finally{state.polling=false;if(!state.closed&&LIVE_INTERPRETATION===state)state.timer=setTimeout(()=>liveInterpretationPoll(state),8000);}
+}
+function liveInterpretationBind(client,SDK,credentials) {
+ const previous=LIVE_INTERPRETATION;
+ const same=credentials.languages.interviewer===credentials.languages.candidate;
+ const state={client,room:credentials.strRoomId,role:credentials.role,language:credentials.sourceLanguage,
+  same,original:same,closed:false,tasks:[],rows:previous?.room===credentials.strRoomId?previous.rows:new Map(),pending:[],queue:[],audioEpoch:0};
+ LIVE_INTERPRETATION=state;liveInterpretationMount();
+ if(previous?.room!==state.room){LIVE_ANALYSIS.answers.clear();HUMAN.transcript=[];}
+ else liveInterpretationRender(state);
+ const originalButton=document.querySelector('[data-action="live-original"]');if(originalButton&&same)originalButton.hidden=true;
+ client.on(SDK.EVENT.CUSTOM_MESSAGE,event=>liveInterpretationMessage(state,event));
+ client.on(SDK.EVENT.REMOTE_AUDIO_AVAILABLE,({userId})=>{
+  if(state.closed||LIVE_INTERPRETATION!==state)return;
+  if(userId===credentials.peerUserId)void client.muteRemoteAudio(userId,!state.original).catch(e=>liveInterpretationNotice(state,e.message));
+ });
+ state.peer=credentials.peerUserId;
+ return state;
+}
+async function liveInterpretationReady(state) {
+ await liveInterpretationCleanup();
+ await state.client.muteRemoteAudio(state.peer,!state.original);
+ void liveInterpretationPoll(state,true);
+}
+async function liveInterpretationLeave(reconnecting=false) {
+ const state=LIVE_INTERPRETATION;
+ if(!state)return;
+ state.closed=true;clearTimeout(state.timer);liveInterpretationClearAudio(state);
+ if(!reconnecting){
+  const ticket=RTC_SESSION.ticket;
+  try{const pending=JSON.parse(sessionStorage.getItem('live-cleanup-v6')||'[]');sessionStorage.setItem('live-cleanup-v6',JSON.stringify([...new Set([...pending,ticket])]));}catch{}
+  try{await rtcRequest('interpretation/stop',{roomTicket:ticket});liveInterpretationForget(ticket);}
+  catch(e){showToast('同传停止待确认：'+e.message+'；下次连线将重试清理','warn');}
+ }
+}
+function liveInterpretationForget(ticket){
+ try{const pending=JSON.parse(sessionStorage.getItem('live-cleanup-v6')||'[]');sessionStorage.setItem('live-cleanup-v6',JSON.stringify(pending.filter(t=>t!==ticket)));}catch{}
+}
+async function liveInterpretationCleanup(){
+ let pending=[];try{pending=JSON.parse(sessionStorage.getItem('live-cleanup-v6')||'[]');}catch{}
+ for(const ticket of pending){try{await rtcRequest('interpretation/stop',{roomTicket:ticket});liveInterpretationForget(ticket);}catch{showToast('上次同传清理暂未确认，请检查云端任务状态','warn');}}
+}
+document.addEventListener('click',async event=>{
+ const action=event.target.closest('[data-action]')?.dataset.action;
+ if(!['live-original','live-audio-resume','live-retry'].includes(action))return;
+ const state=LIVE_INTERPRETATION;if(!state || state.closed)return;
+ try{
+  if(action==='live-original'){
+   state.original=!state.original;state.audioError='';liveInterpretationClearAudio(state);
+   await state.client.muteRemoteAudio(state.peer,!state.original);
+   event.target.closest('button').textContent=state.original?'收听译音':'收听原声';
+   liveInterpretationNotice(state,state.original?'正在收听对方原声':'正在收听译音，等待对方下一句发言');
+  }else if(action==='live-audio-resume'){await state.player?.play();state.audioError='';event.target.closest('button').hidden=true;}
+  else{clearTimeout(state.timer);await liveInterpretationPoll(state,true);}
+ }catch(e){liveInterpretationNotice(state,e.message);}
+},true);
+
 })();
 </script>
 <script src="assets/visual-polish-v4.js?v=20261105"></script>
+
 </body>
 </html>
