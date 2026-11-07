@@ -1,0 +1,76 @@
+/* Keep the live room within the available browser viewport; scroll its content. */
+body:has(#hu-screen){overflow:hidden}
+#hu-screen{position:fixed;inset:0;height:100vh;height:100dvh;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+#hu-screen>.iv-top{height:54px;min-height:0;flex:0 0 54px;padding:0 14px;gap:10px;flex-wrap:nowrap}
+#hu-screen .iv-context{overflow:hidden}
+#hu-screen .iv-context .t{overflow:hidden;text-overflow:ellipsis}
+#hu-screen>.interview-language-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding:8px 16px;flex:0 0 auto;margin:0}
+#hu-screen .interview-language-bar .language-note{margin:0;font-size:12px;flex:1 1 260px}
+#hu-screen>.iv-body{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);flex:1 1 0;min-height:0;height:auto;padding:10px 12px;gap:12px;overflow:hidden}
+#hu-screen .stage,#hu-screen .iv-panel{min-height:0;height:auto;min-width:0;overflow:hidden;flex-shrink:1}
+#hu-screen .stage-view.meet-stage{height:auto;min-height:0;flex:1 1 0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);padding:8px;gap:8px}
+#hu-screen .meet-pane{min-height:0;min-width:0}
+#hu-screen .waiting-remote{min-height:0;height:100%;padding:12px}
+#hu-screen .waiting-remote h3{font-size:clamp(14px,1.4vw,20px);margin:8px 0}
+#hu-screen .waiting-remote p{font-size:12px;line-height:1.5;margin:4px 0}
+#hu-screen .waiting-mark{width:48px;height:48px;border-radius:14px}
+#hu-screen .meet-pane-name{top:44px;bottom:auto;max-width:calc(100% - 24px)}
+#hu-screen .meet-caption{min-height:0;max-height:28%;overflow:auto;overscroll-behavior:contain}
+#hu-screen .meet-caption .src,#hu-screen .meet-caption .tr{white-space:pre-wrap;overflow-wrap:anywhere;display:block;-webkit-line-clamp:unset}
+#hu-screen .stage-controls{height:56px;flex:0 0 56px;padding:0 10px;gap:8px}
+#hu-screen .stage-controls .live-time{display:none}
+#hu-screen .iv-panel-head{padding:10px 14px;min-height:40px}
+#hu-screen .live-guide{flex:0 0 auto;min-height:0;border-bottom:1px solid #304a60}
+#hu-screen .live-guide>summary{cursor:pointer;padding:10px 14px;color:#9edacf;font-size:14px;font-weight:600}
+#hu-screen #interview-guide-human{min-height:0;max-height:26dvh;overflow:auto;padding:12px 16px}
+#hu-screen #hu-transcript{flex:1 1 0;min-height:0;max-height:none;overflow:auto;overflow-anchor:none;padding:12px 14px;scroll-behavior:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+#hu-transcript .live-caption{padding:20px 22px;margin:0 0 20px}
+#hu-transcript .live-caption p{font-size:clamp(21px,1.55vw,28px);font-weight:580;line-height:1.85;letter-spacing:.015em;margin:10px 0}
+#hu-transcript .live-caption .live-translation{font-size:clamp(21px,1.55vw,28px);font-weight:580}
+#hu-transcript .live-caption [hidden]{display:none!important}
+#hu-screen>.rtc-call-actions{flex:0 0 auto;padding:8px 12px;margin:0;border-top:1px solid #294354;gap:8px}
+#hu-screen>.rtc-call-actions .btn{padding:8px 10px;min-height:34px;font-size:12px;white-space:nowrap}
+#hu-screen #live-interpretation-state{font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+#hu-screen>.iv-footnote{display:none}
+#hu-screen .meet-stage.has-expanded{grid-template-columns:minmax(0,1fr)}
+#hu-screen .meet-stage.has-expanded .meet-pane:not(.video-expanded){display:none}
+@media(max-width:1100px){
+ #hu-screen .brand-copy,#hu-screen .iv-sep,#hu-screen .iv-context .s{display:none}
+ #hu-screen>.iv-body{grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:8px;padding:8px}
+ #hu-screen .stage-view.meet-stage{grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
+ #hu-screen .meet-stage.has-expanded{grid-template-rows:minmax(0,1fr)}
+ #hu-screen .waiting-remote p{display:none}
+}
+@media(max-width:700px){
+ #hu-screen>.iv-top{height:46px;flex-basis:46px;padding:0 8px;gap:6px}
+ #hu-screen .iv-top>.live-status,#hu-screen .iv-top>.stage-badge,#hu-screen .brand{display:none}
+ #hu-screen>.interview-language-bar{padding:6px 10px;gap:6px 16px;font-size:12px}
+ #hu-screen .language-note{display:none}
+ #hu-screen>.iv-body{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,.8fr) minmax(0,1fr);padding:6px;gap:6px}
+ #hu-screen .stage-view.meet-stage{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);padding:5px;gap:5px}
+ #hu-screen .meet-pane-top{top:5px;left:5px;right:5px}
+ #hu-screen .meet-pane-top .stage-badge:nth-child(2),#hu-screen .meet-pane-name .r{display:none}
+ #hu-screen .meet-pane-name{top:32px;left:8px}
+ #hu-screen .meet-caption{display:none}
+ #hu-screen .waiting-remote h3{font-size:12px}
+ #hu-screen .waiting-mark{width:34px;height:34px}
+ #hu-screen .stage-controls{height:48px;flex-basis:48px;gap:6px;padding:0 8px}
+ #hu-screen .ctl{width:30px;height:30px}
+ #hu-screen .ctl-label{font-size:8px}
+ #hu-screen .stage-controls .btn{height:32px;padding:0 10px}
+ #hu-screen .iv-panel-head{padding:8px 10px;min-height:34px}
+ #hu-screen .live-guide>summary{padding:7px 10px;font-size:12px}
+ #hu-screen #interview-guide-human{max-height:18dvh}
+ #hu-screen #hu-transcript{padding:8px}
+ #hu-transcript .live-caption{padding:16px;margin-bottom:14px}
+ #hu-screen>.rtc-call-actions{padding:6px 8px;gap:6px}
+ #hu-screen #live-interpretation-state{flex:1 0 100%;font-size:12px;max-height:34px;overflow:auto}
+ #hu-screen>.rtc-call-actions .btn{padding:5px 8px;font-size:11px;min-height:30px}
+}
+@media(max-height:650px){
+ #hu-screen>.iv-top{height:44px;flex-basis:44px}
+ #hu-screen .language-note,#hu-screen .waiting-remote p{display:none}
+ #hu-screen>.interview-language-bar{padding:5px 12px}
+ #hu-screen .meet-caption{max-height:24%}
+ #hu-screen .iv-panel-head{padding:8px 12px;min-height:32px}
+}
