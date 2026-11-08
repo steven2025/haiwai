@@ -1,0 +1,11 @@
+.rubric-panel{margin:18px 0;border:1px solid #427486;border-radius:16px;background:#102b3b;padding:16px;color:#edf8ff}
+.rubric-panel summary{cursor:pointer;font-size:21px;font-weight:750;display:flex;justify-content:space-between;color:#78eee0}
+.rubric-panel fieldset{border:0;padding:0;min-width:0}.rubric-row{display:grid;grid-template-columns:minmax(150px,1fr) minmax(60px,1fr) 76px 20px;gap:10px;align-items:center;margin:16px 0;font-size:18px}
+.rubric-row input[type=number]{width:76px;min-width:0;padding:8px;font:inherit}.rubric-row input[type=range]{width:100%;accent-color:#51dfce;padding:0}.rubric-panel button{white-space:normal}
+.rubric-report article{margin:18px 0;padding:18px;border-left:4px solid var(--rubric-color);background:#102738;border-radius:12px}.rubric-report article>div{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;font-size:21px;color:var(--rubric-color)}.rubric-report progress{width:100%;height:16px;accent-color:var(--rubric-color);margin-top:12px}.rubric-report p,.rubric-report blockquote{font-size:18px;line-height:1.7}.rubric-report small{font-size:17px;color:#d5e6f4}
+@media(max-width:600px){.rubric-row{grid-template-columns:minmax(50px,1fr) 70px 18px}.rubric-row>span:first-child{grid-column:1/-1}.rubric-panel{padding:12px}.rubric-report article{padding:12px}}
+
+.modal-card.rubric-modal{width:min(860px,calc(100vw - 24px));max-height:calc(100dvh - 32px);display:flex;flex-direction:column;overflow:hidden}
+.rubric-modal>.modal-head,.rubric-modal>.modal-foot{flex:0 0 auto}.rubric-modal>.dossier-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:20px 24px}
+.rubric-modal .rubric-row{margin:12px 0;line-height:1.5}.rubric-modal .rubric-row input{margin:0}.rubric-modal .rubric-panel p{margin:12px 0}.rubric-modal .rubric-panel .tiny{font-size:14px;line-height:1.6}
+@media(max-width:600px){.rubric-modal>.dossier-body{padding:14px}.rubric-modal>.modal-foot{padding:12px;flex-wrap:wrap;gap:8px}.rubric-modal>.modal-foot button{padding:10px;font-size:14px}.rubric-modal>.modal-head{padding:14px}.rubric-modal .rubric-row{font-size:17px}}
